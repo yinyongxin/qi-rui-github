@@ -2,6 +2,7 @@ import Layout from '@/Layout';
 import Home from '@/pages/home';
 import ReduxExemple from '@/pages/reduxExemple';
 import ZLMyOrder from '@/pages/myOrder';
+import ZLCharts from '@/pages/charts';
 import Login from '@/pages/login';
 import NoPage from '@/pages/noPage';
 import BasicInformation from '@/pages/basicInformation';
@@ -23,6 +24,10 @@ export const routes: RouteObject[] = [
       {
         path: 'myOrder',
         element: <ZLMyOrder />,
+      },
+      {
+        path: 'charts',
+        element: <ZLCharts />,
       },
       {
         path: 'basicInformation',
