@@ -1,0 +1,26 @@
+.zlOrderList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  & > div {
+    box-sizing: border-box;
+    // margin-bottom: 12px;
+    // margin-right: 12px;
+    &:nth-child(6n) {
+      margin-right: 0 !important;
+    }
+  }
+  .info {
+    .infoTop {
+      span {
+        display: inline-block;
+        padding: 4px 8px;
+        margin-right: 4px;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+    .originator {
+      padding: 10px 0;
+    }
+  }
+}

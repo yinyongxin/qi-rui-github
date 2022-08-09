@@ -1,0 +1,79 @@
+.login {
+  width: 100vw;
+  height: 100vh;
+  font-size: var(--design-base-zh);
+  background-image: url('./images/loginCover.png');
+  background-size: 100% 100%;
+
+  .nav {
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(266.19deg, var(--design-neutral-color-9) 33.43%, rgba(0, 0, 0, 0) 90.63%);
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    box-sizing: border-box;
+
+    .chery {
+      margin-left: 10px;
+    }
+
+    .control {
+      margin-left: 15px;
+    }
+  }
+
+  .content {
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: linear-gradient(266.19deg, var(--design-neutral-color-9) 33.43%, rgba(0, 0, 0, 0) 90.63%);
+    padding-top: 80px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: end;
+
+    .loginCover {
+      box-sizing: border-box;
+      width: 360px;
+      height: 497px;
+      background: var(--design-neutral-color-9);
+      opacity: 0.7;
+      border: 1px solid #666666;
+      margin-right: 280px;
+
+      .title {
+        font-family: 'Noto Sans SC';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 32px;
+        color: var(--design-neutral-color);
+        opacity: 0.85;
+        width: 100%;
+        text-align: center;
+        margin-top: 64px;
+      }
+
+      .code {
+        width: 200px;
+        height: 200px;
+        margin: auto;
+        margin-top: 48px;
+      }
+
+      .codeWeChat {
+        font-family: 'Noto Sans SC';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        color: var(--design-neutral-color);
+        opacity: 0.85;
+        width: 100%;
+        text-align: center;
+        margin-top: 40px;
+
+      }
+    }
+  }
+}

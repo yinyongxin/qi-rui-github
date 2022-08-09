@@ -1,0 +1,11 @@
+:root {
+  color: var(--design-neutral-color9);
+  background-color: var(--design-neutral-color);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: var(--design-neutral-color);
+    background-color: var(--design-neutral-color-9);
+  }
+}
