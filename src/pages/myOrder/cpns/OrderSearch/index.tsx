@@ -1,12 +1,13 @@
 import React, { useRef, useState } from 'react';
 
-import { Tabs } from 'qirui-digitization-ui';
+import { Icon, Tabs } from 'qirui-digitization-ui';
+import { TabType } from 'qirui-digitization-ui/dist/Tabs/Tabs/interface';
 
 import styles from './styles.module.less';
 
 const ZLOrderSearch = () => {
   // state & props
-  const [tabList, setTabList] = useState([
+  const tabList: TabType[] = [
     {
       title: '待处理',
       // content: 'content1',
@@ -50,22 +51,28 @@ const ZLOrderSearch = () => {
       current: 'key7',
       num: 24,
     },
-  ]);
+  ];
 
   // redux hooks
 
   // other hooks
-  const TabsRef = useRef();
+  const tabsRef = useRef();
+
+  // handles
 
   return (
-    <div className={styles.zlOrderSearch}>
-      <div className={styles.title}>我的工单</div>
+    <div className={styles.zlOrderSearchWrapper}>
+      <div className={styles.title}>
+        <span>我的工单</span>
+      </div>
       <div className={styles.search}>
         <input type="text" className={styles.kw} placeholder="点击搜索工单" />
-        <i className={'fa-solid fa-magnifying-glass ' + styles.icon}></i>
+        <div className={styles.icon}>
+          <Icon icon="angles-down" />
+        </div>
       </div>
       <div className={styles.status}>
-        <Tabs ref={TabsRef} tabList={tabList} activeTab="key1" />
+        <Tabs ref={tabsRef} tabList={tabList} activeTab="key1" />
       </div>
     </div>
   );
