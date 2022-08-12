@@ -1,43 +1,40 @@
 import React, { useState } from 'react';
 
-import MyChart from '@/components/Charts';
-import {
-  lineChartsConfig,
-  linesChartsConfig,
-  lineBarChartsConfig,
-  barChartsConfig,
-} from './config';
+import { BarChart, LineChart, PieChart } from '@/components/PageCharts';
+import { barChartConfig, lineChartConfig } from './config';
 
 import styles from './styles.module.less';
 
 const ZLCharts: React.FC = () => {
   // state & props
-  const [lineData, setLineData] = useState([
-    [38, 32, 25, 33, 40, 35, 10, 20, 31, 32, 38, 42],
-  ]);
-  const [linesData, setLinesData] = useState([
-    [13, 21, 11, 17, 21, 14, 17, 5, 18, 10, 17, 11],
-    [32, 48, 25, 38, 48, 32, 39, 15, 40, 28, 36, 25],
-  ]);
-  const [barData, setBarData] = useState([
-    [36, 32, 25, 33],
-    [23, 34, 15, 28],
-    [35, 32, 35, 38],
-    [40, 42, 40, 40],
-  ]);
-  const [lineBarData, setLineBarData] = useState([
-    [36, 32, 25, 33, 40, 35, 28, 24, 31, 32, 38, 42],
-    [38, 32, 25, 33, 40, 35, 10, 20, 31, 32, 38, 42],
-  ]);
+  const barData = [16, 32, 25, 33, 40, 35, 28, 24, 31, 32, 38, 42];
+  const lineData = [36, 32, 25, 33, 40, 35, 28, 24, 31, 32, 38, 42];
+  const pieData = [
+    { value: 100, name: 'Search Engine' },
+    { value: 735, name: 'Direct' },
+    { value: 580, name: 'Email' },
+    { value: 484, name: 'Union Ads' },
+    { value: 300, name: 'Video Ads' },
+  ];
 
   // handles
+  const handleData = () => {};
 
   return (
     <div className={styles.charts}>
-      <MyChart data={lineData} chartsConfig={lineChartsConfig} />
-      <MyChart data={linesData} chartsConfig={linesChartsConfig} />
-      <MyChart data={barData} chartsConfig={barChartsConfig} />
-      <MyChart data={lineBarData} chartsConfig={lineBarChartsConfig} />
+      <BarChart
+        width="754px"
+        height="336px"
+        data={barData}
+        config={barChartConfig}
+      />
+      <LineChart
+        width="754px"
+        height="336px"
+        data={lineData}
+        config={lineChartConfig}
+      />
+      <PieChart width="754px" height="336px" data={pieData} />
     </div>
   );
 };

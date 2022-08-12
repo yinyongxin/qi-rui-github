@@ -68,7 +68,7 @@ const ZLOrderSearch = () => {
       <div className={styles.search}>
         <input type="text" className={styles.kw} placeholder="点击搜索工单" />
         <div className={styles.icon}>
-          <Icon icon="angles-down" />
+          <Icon icon="magnifying-glass" />
         </div>
       </div>
       <div className={styles.status}>
