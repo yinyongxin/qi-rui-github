@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ZLOrderSearch from './components/OrderSearch';
-import ZLOrderContent from './components/OrderContent';
+import ZLOrderSearch from './cpns/OrderSearch';
+import ZLOrderContent from './cpns/OrderContent';
 
 import styles from './styles.module.less';
 

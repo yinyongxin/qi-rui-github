@@ -3,6 +3,7 @@ import Home from '@/pages/home';
 import ReduxExemple from '@/pages/reduxExemple';
 import ZLMyOrder from '@/pages/myOrder';
 import ZLCharts from '@/pages/charts';
+import ZLManagerHome from '@/pages/managerHome';
 import Login from '@/pages/login';
 import NoPage from '@/pages/noPage';
 import BasicInformation from '@/pages/basicInformation';
@@ -28,6 +29,10 @@ export const routes: RouteObject[] = [
       {
         path: 'charts',
         element: <ZLCharts />,
+      },
+      {
+        path: 'manager',
+        element: <ZLManagerHome />,
       },
       {
         path: 'basicInformation',
