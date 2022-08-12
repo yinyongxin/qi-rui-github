@@ -12,6 +12,8 @@ import { store } from './store'
 import "normalize.css"
 import './index.css'
 import 'qirui-digitization-ui/style'
+import 'qirui-digitization-ui/icons/css'
+import 'qirui-digitization-ui/theme'
 import { appLocalStorage, changeTheme } from './utils/tools'
 
 const appInit = () => {
