@@ -4,6 +4,7 @@ import ReduxExemple from '@/pages/reduxExemple';
 import ZLMyOrder from '@/pages/myOrder';
 import ZLCharts from '@/pages/charts';
 import ZLManagerHome from '@/pages/managerHome';
+import ZLManagerList from '@/pages/manangerList';
 import ZLOperatorHome from '@/pages/operatorHome';
 import Login from '@/pages/login';
 import NoPage from '@/pages/noPage';
@@ -34,6 +35,10 @@ export const routes: RouteObject[] = [
       {
         path: 'manager',
         element: <ZLManagerHome />,
+      },
+      {
+        path: 'manager/list',
+        element: <ZLManagerList />,
       },
       {
         path: 'operator',
