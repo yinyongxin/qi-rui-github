@@ -1,12 +1,12 @@
-import React, { useEffect, useState, useImperativeHandle, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 
+import { isArray } from 'lodash';
 import BaseChart from './BaseChart';
 import { ChartPropsInterface } from '../types';
-import { isArray, isFunction } from 'lodash';
 
-const BarChart: React.FC<ChartPropsInterface> = (props) => {
+const BarLineChart: React.FC<ChartPropsInterface> = (props) => {
   // state & props
-  const { data, width = '754px', height = '336px', config, onClick } = props;
+  const { data, width = '754px', height = '336px', config } = props;
   const [option, setOption] = useState({});
   const [series, setSeries] = useState<any>([]);
 
@@ -26,9 +26,7 @@ const BarChart: React.FC<ChartPropsInterface> = (props) => {
   useEffect(() => {
     setOption({
       color: [
-        'var(--design-charts-type1-color)',
         'var(--design-charts-type2-color)',
-        'var(--design-charts-type3-color)',
         'var(--design-charts-type5-color)',
       ],
       xAxis: {
@@ -40,7 +38,7 @@ const BarChart: React.FC<ChartPropsInterface> = (props) => {
         splitLine: {
           lineStyle: {
             type: config?.barInverse ? config?.splitLineType || 'solid' : null,
-            color: config?.barInverse ? config?.splitLineColor : '#ffffff',
+            color: config?.barInverse ? config?.splitLineColor : null,
           },
         },
       },
@@ -64,47 +62,52 @@ const BarChart: React.FC<ChartPropsInterface> = (props) => {
 
   // handles
   const renderData = (res: any[]) => {
-    let series: any[] = [];
-    res.map((item: any, index: number) => {
-      let handleData = {
+    let series: any[] = [
+      {
+        data: res[0],
         type: 'bar',
-        data: item,
         itemStyle: {
-          color: config?.itemColor?.[index],
+          color: config?.itemColor?.[0],
         },
-        stack: config?.seriesStack,
-      };
-      series.push(handleData);
-    });
+      },
+      {
+        data: res[1],
+        type: 'line',
+        symbol: config?.seriesSymbolType || 'emptyCircle',
+        itemStyle: {
+          color: config?.itemColor?.[1],
+        },
+      },
+    ];
     return series;
   };
-  const renderDataAsync = async (data: any) => {
-    let series: any[] = [];
-    let result = await data();
-    result.map((item: any, index: number) => {
-      let handleData = {
+  const renderDataAsync = async (res: any) => {
+    let result = await res();
+    let series: any[] = [
+      {
+        data: result[0],
         type: 'bar',
-        data: item,
         itemStyle: {
-          color: config?.itemColor?.[index],
+          color: config?.itemColor?.[0],
         },
-        stack: config?.seriesStack,
-      };
-      series.push(handleData);
-    });
+      },
+      {
+        data: result[1],
+        type: 'line',
+        symbol: config?.seriesSymbolType || 'emptyCircle',
+        itemStyle: {
+          color: config?.itemColor?.[1],
+        },
+      },
+    ];
     return series;
   };
 
   return (
     <>
-      <BaseChart
-        option={option}
-        width={width}
-        height={height}
-        onClick={onClick}
-      />
+      <BaseChart option={option} width={width} height={height} />
     </>
   );
 };
 
-export default BarChart;
+export default BarLineChart;

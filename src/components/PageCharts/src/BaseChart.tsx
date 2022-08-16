@@ -3,11 +3,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import _ from 'lodash';
 import echarts from '../config/echarts.config';
 import { EChartsType } from 'echarts/core';
+import { ECElementEvent } from 'echarts/types/src/util/types';
 import { BasePropsInterface } from '../types';
 
 const BaseChart: React.FC<BasePropsInterface> = (props) => {
   // state & props
-  const { width, height, option } = props;
+  const { width, height, option, onClick } = props;
 
   // redux hooks
 
@@ -24,6 +25,10 @@ const BaseChart: React.FC<BasePropsInterface> = (props) => {
           renderer: 'svg',
         });
       }
+      cInstance.current.on('click', (event) => {
+        const ec = event as ECElementEvent;
+        if (ec && onClick) onClick(ec);
+      });
       // 设置配置项
       if (option) cInstance.current?.setOption(option);
     }
@@ -36,12 +41,6 @@ const BaseChart: React.FC<BasePropsInterface> = (props) => {
       window.removeEventListener('resize', resize);
     };
   }, [option]);
-
-  // 展示加载中
-  /*  useEffect(() => {
-    if (loading) cInstance.current?.showLoading();
-    else cInstance.current?.hideLoading();
-  }, [loading]); */
 
   // handles
   // 重新适配大小
