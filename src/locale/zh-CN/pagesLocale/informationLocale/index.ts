@@ -1,0 +1,21 @@
+export const informationLocale = {
+  'information.name': '用户名称',
+  'information.entryTime': '入职时间',
+  'information.jobTitle': '职称',
+  'information.JobNumber': '工号',
+  'information.workingYears': '工龄',
+  'information.contact.information': '联系信息',
+  'information.email': '邮箱',
+  'information.modify.email': '修改邮箱',
+  'information.modify.avatar': '修改头像',
+  'information.cell.phone': '手机',
+  'information.modify.cell.phone': '修改手机',
+  'information.account.center': '账号中心',
+  'information.basic.information': '基本资料',
+  'information.my.studies': '我的学习',
+  'information.image.format':
+    '图片格式只支持：BMP、JPEG、JPG、GIF、PNG，大小不超过2M',
+  'information.choose.image': '选择图片',
+  'information.avatar.preview': '头像预览',
+  'information.drop.preview': '拖拽图片以调整头像位置',
+};
