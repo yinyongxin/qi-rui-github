@@ -14,6 +14,10 @@ export interface ChartPropsInterface {
   data: any[] | (() => Promise<any[]>);
   config?: ChartsConfigInterface;
   onClick?(event: ECElementEvent): any;
+  ref?: React.RefObject<IRefInterface>;
+}
+export interface IRefInterface {
+  refresh: () => void;
 }
 
 export interface ChartsConfigInterface {

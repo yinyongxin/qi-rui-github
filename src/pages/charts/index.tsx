@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import {
   LineChart,
@@ -16,6 +16,7 @@ import {
   barStripStackChartConfig,
   barLineChartConfig,
 } from './config';
+import { IRefInterface } from '@/components/PageCharts/types';
 
 import styles from './styles.module.less';
 
@@ -59,10 +60,26 @@ const ZLCharts: React.FC = () => {
     [36, 32, 25, 33, 40, 35, 28, 24, 31, 32, 38, 42],
   ];
 
+  // other hooks
+  const barRef = useRef<IRefInterface>(null);
+  const lineRef = useRef<IRefInterface>(null);
+  const pieRef = useRef<IRefInterface>(null);
+  const barLineRef = useRef<IRefInterface>(null);
+
   // handles
   const handleClick = (e: any) => {
     console.log(e);
   };
+
+  /* useEffect(() => {
+    console.log(barRef.current?.refresh());
+  }, []); */
+  /* useEffect(() => {
+    console.log(lineRef.current?.refresh());
+  }, []); */
+  useEffect(() => {
+    console.log(barLineRef.current?.refresh());
+  }, []);
 
   return (
     <div className={styles.charts}>
@@ -80,6 +97,7 @@ const ZLCharts: React.FC = () => {
         }}
         config={barChartConfig}
         onClick={handleClick}
+        ref={barRef}
       />
       <LineChart
         width="754px"
@@ -89,6 +107,7 @@ const ZLCharts: React.FC = () => {
           return res;
         }}
         config={lineChartConfig}
+        ref={lineRef}
       />
       <PieChart
         width="754px"
@@ -103,6 +122,7 @@ const ZLCharts: React.FC = () => {
           return res;
         }}
         config={pieChartConfig}
+        ref={pieRef}
       />
       <BarLineChart
         width="40%"
@@ -115,6 +135,7 @@ const ZLCharts: React.FC = () => {
           return res;
         }}
         config={barLineChartConfig}
+        ref={barLineRef}
       />
 
       <BarChart
