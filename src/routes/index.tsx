@@ -7,6 +7,8 @@ import ZLManagerHome from '@/pages/managerHome';
 import ZLManagerList from '@/pages/manangerList';
 import ZLOperatorHome from '@/pages/operatorHome';
 import ZLChartsHome from '@/pages/chartsHome';
+import ZLDeliveryTwo from '@/pages/chartsHome/cpages/deliveryTwo';
+import ZLDeliveryThree from '@/pages/chartsHome/cpages/deliveryThree';
 import Login from '@/pages/login';
 import NoPage from '@/pages/noPage';
 import BasicInformation from '@/pages/basicInformation';
@@ -52,6 +54,14 @@ export const routes: RouteObject[] = [
       {
         path: 'chartsHome',
         element: <ZLChartsHome />,
+      },
+      {
+        path: 'delivery/two',
+        element: <ZLDeliveryTwo />,
+      },
+      {
+        path: 'delivery/three',
+        element: <ZLDeliveryThree />,
       },
       {
         path: '*',

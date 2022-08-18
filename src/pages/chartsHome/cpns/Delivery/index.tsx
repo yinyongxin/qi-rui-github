@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 
+import { useNavigate } from 'react-router-dom';
 import { Card, Title } from 'qirui-digitization-ui';
 import { BarLineChart } from '@/components/PageCharts';
 
@@ -49,6 +50,7 @@ const ZLChartsDelivery = () => {
   // redux hooks
 
   // other hooks
+  const navigate = useNavigate();
 
   // handles
   const headerStyle = {
@@ -59,6 +61,9 @@ const ZLChartsDelivery = () => {
   const bodyStyle = {
     padding: '16px',
   };
+  const handleClick = () => {
+    navigate('/delivery/two');
+  };
 
   return (
     <div className={styles.zlDeliveryWrapper}>
@@ -66,7 +71,7 @@ const ZLChartsDelivery = () => {
       <div className={styles.content}>
         {state.map((item, index) => {
           return (
-            <Fragment key={item.title}>
+            <div key={item.title} onClick={handleClick}>
               <Card
                 title={item.title}
                 width={377}
@@ -93,7 +98,7 @@ const ZLChartsDelivery = () => {
                   </div>
                 </div>
               </Card>
-            </Fragment>
+            </div>
           );
         })}
       </div>
