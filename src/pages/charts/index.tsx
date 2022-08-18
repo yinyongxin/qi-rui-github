@@ -83,7 +83,23 @@ const ZLCharts: React.FC = () => {
 
   return (
     <div className={styles.charts}>
-      <BarChart
+      {/* <BarChart
+        width="40%"
+        height="336px"
+        data={[[10, 12, 23, 45, 24, 11, 12, 34, 45, 12, 34, 45]]}
+        config={barChartConfig}
+      /> */}
+      <BarLineChart
+        width="40%"
+        height="336px"
+        data={[
+          [38, 32, 25, 33, 40, 35, 10, 22, 31, 32, 38, 42],
+          [36, 32, 25, 33, 40, 35, 28, 24, 31, 32, 38, 42],
+        ]}
+        config={barLineChartConfig}
+        ref={barLineRef}
+      />
+      {/* <BarChart
         width="40%"
         height="336px"
         data={async () => {
@@ -124,19 +140,7 @@ const ZLCharts: React.FC = () => {
         config={pieChartConfig}
         ref={pieRef}
       />
-      <BarLineChart
-        width="40%"
-        height="336px"
-        data={async () => {
-          let res = await [
-            [38, 32, 25, 33, 40, 35, 10, 20, 31, 32, 38, 42],
-            [36, 32, 25, 33, 40, 35, 28, 24, 31, 32, 38, 42],
-          ];
-          return res;
-        }}
-        config={barLineChartConfig}
-        ref={barLineRef}
-      />
+      
 
       <BarChart
         width="40%"
@@ -192,7 +196,7 @@ const ZLCharts: React.FC = () => {
         height="336px"
         data={barLineData}
         config={barLineChartConfig}
-      />
+      /> */}
     </div>
   );
 };

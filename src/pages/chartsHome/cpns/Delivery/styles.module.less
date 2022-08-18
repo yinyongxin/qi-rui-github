@@ -1,0 +1,28 @@
+.zlDeliveryWrapper {
+  width: 754px;
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 20px;
+    .info {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+        .colorGreen {
+          color: var(--design-success-color);
+        }
+        .colorRed {
+          color: var(--design-error-color);
+        }
+      }
+    }
+  }
+}

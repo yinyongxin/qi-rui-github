@@ -5,7 +5,7 @@ import {
   BarLineChartConfig,
 } from '@/components/PageCharts/types';
 
-/* export let barChartConfig: BarChartConfig = {
+export let barChartConfig: BarChartConfig = {
   xLabel: ['Q1', 'Q2', 'Q3', 'Q4'],
   axisTickIsShow: false,
   splitLineType: 'dashed',
@@ -16,7 +16,7 @@ import {
     'var(--design-charts-type3-color)',
     'var(--design-charts-type5-color)',
   ],
-}; */
+};
 export let barStackChartConfig: BarChartConfig = {
   xLabel: ['Q1', 'Q2', 'Q3', 'Q4'],
   axisTickIsShow: false,
@@ -84,10 +84,4 @@ export let barLineChartConfig: BarLineChartConfig = {
     'var(--design-charts-type2-color)',
     'var(--design-charts-type5-color)',
   ],
-};
-export let barChartConfig: BarChartConfig = {
-  xLabel: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-  axisTickIsShow: false,
-  splitLineType: 'dashed',
-  splitLineColor: 'var(--design-neutral-color-5)',
 };

@@ -6,6 +6,7 @@ import ZLCharts from '@/pages/charts';
 import ZLManagerHome from '@/pages/managerHome';
 import ZLManagerList from '@/pages/manangerList';
 import ZLOperatorHome from '@/pages/operatorHome';
+import ZLChartsHome from '@/pages/chartsHome';
 import Login from '@/pages/login';
 import NoPage from '@/pages/noPage';
 import BasicInformation from '@/pages/basicInformation';
@@ -47,6 +48,10 @@ export const routes: RouteObject[] = [
       {
         path: 'basicInformation',
         element: <BasicInformation />,
+      },
+      {
+        path: 'chartsHome',
+        element: <ZLChartsHome />,
       },
       {
         path: '*',

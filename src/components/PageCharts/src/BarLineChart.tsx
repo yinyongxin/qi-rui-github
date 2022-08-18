@@ -89,7 +89,26 @@ const BarLineChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
           data: res[0],
           type: 'bar',
           itemStyle: {
-            color: config?.itemColor?.[0],
+            normal: {
+              color: function (params: any) {
+                let barData = params.value;
+                for (let i = 0; i < res[1].length; i++) {
+                  let item = res[1][i];
+                  if (params.dataIndex === i) {
+                    if (barData < item) {
+                      if ((item - barData) / 100 < 0.05) {
+                        return 'var(--design-charts-type8-color)';
+                      } else {
+                        return 'var(--design-charts-type9-color)';
+                      }
+                    } else {
+                      return 'var(--design-charts-type1-color)';
+                    }
+                  }
+                }
+              },
+            },
+            // color: config?.itemColor?.[0],
           },
         },
         {
@@ -97,7 +116,10 @@ const BarLineChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
           type: 'line',
           symbol: config?.seriesSymbolType || 'emptyCircle',
           itemStyle: {
-            color: config?.itemColor?.[1],
+            normal: {
+              color: function (params: any) {},
+            },
+            // color: config?.itemColor?.[1],
           },
         },
       ];
@@ -110,7 +132,26 @@ const BarLineChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
           data: result[0],
           type: 'bar',
           itemStyle: {
-            color: config?.itemColor?.[0],
+            normal: {
+              color: function (params: any) {
+                let barData = params.value;
+                for (let i = 0; i < result[1].length; i++) {
+                  let item = result[1][i];
+                  if (params.dataIndex === i) {
+                    if (barData < item) {
+                      if ((item - barData) / 100 < 0.05) {
+                        return 'var(--design-charts-type8-color)';
+                      } else {
+                        return 'var(--design-charts-type9-color)';
+                      }
+                    } else {
+                      return 'var(--design-charts-type1-color)';
+                    }
+                  }
+                }
+              },
+            },
+            // color: config?.itemColor?.[0],
           },
         },
         {
@@ -124,6 +165,7 @@ const BarLineChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
       ];
       return series;
     };
+    const renderColor = (params: any) => {};
 
     return (
       <>

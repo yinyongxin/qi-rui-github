@@ -29,6 +29,35 @@ const BarChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
         setSeries(renderData(data));
       }
     }, [config]);
+    useEffect(() => {
+      setOption({
+        xAxis: {
+          type: 'category',
+          data: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'],
+        },
+        yAxis: {
+          type: 'value',
+        },
+        series: [
+          {
+            data: [120, 200, 150, 80, 70, 110, 130, 190, 140, 90, 6],
+            type: 'bar',
+            itemStyle: {
+              normal: {
+                color: function (params: any) {
+                  console.log(params, 234);
+
+                  // 给出颜色组
+                  var colorList = ['#cca272', '#74608f', '#d7a02b', '#c8ba23'];
+                  //循环调用
+                  return colorList[params.dataIndex % colorList.length];
+                },
+              },
+            },
+          },
+        ],
+      });
+    }, [series]);
 
     useEffect(() => {
       setOption({
