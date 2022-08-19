@@ -12,8 +12,7 @@ import { ModalType } from '../../types';
 import Cropper from 'react-cropper';
 
 import 'cropperjs/dist/cropper.css';
-const defaultSrc =
-  'https://raw.githubusercontent.com/roadmanfong/react-cropper/master/example/img/child.jpg';
+const defaultSrc = 'images/info.png';
 const ModalComment = (props, ref) => {
   const locale = useLocale();
   const ModalRef = useRef<ModalHandle>();

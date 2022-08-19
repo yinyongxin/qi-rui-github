@@ -1,36 +1,36 @@
-import { Tabs } from 'qirui-digitization-ui'
-import { TabType } from 'qirui-digitization-ui/dist/Tabs/Tabs/interface'
-import LeftLogo from './coms/LeftLogo'
-import RightInfo from './coms/RightInfo'
-import styles from './styles.module.less'
+import { Tabs } from 'qirui-digitization-ui';
+import { TabType } from 'qirui-digitization-ui/dist/Tabs/Tabs/interface';
+import LeftLogo from './coms/LeftLogo';
+import RightInfo from './coms/RightInfo';
+import styles from './styles.module.less';
 
 const NavBar = () => {
   const tabsList: TabType[] = [
     {
       current: 'overview',
-      title: 'OVERVIEW'
+      title: 'OVERVIEW',
     },
     {
       current: 'metrics',
-      title: 'METRICS'
+      title: 'METRICS',
     },
     {
       current: 'schematic',
-      title: 'SCHEMATIC'
+      title: 'SCHEMATIC',
     },
     {
       current: 'insight to action',
-      title: 'INSIGHT TO ACTION'
+      title: 'INSIGHT TO ACTION',
     },
-  ]
-  console.log('styles', styles);
+  ];
+
   return (
     <div className={styles.navBar}>
       <LeftLogo />
-      <Tabs type='card' tabList={tabsList} />
+      <Tabs type="card" tabList={tabsList} />
       <RightInfo />
     </div>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

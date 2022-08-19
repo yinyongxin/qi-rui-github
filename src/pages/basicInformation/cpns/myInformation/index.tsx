@@ -1,12 +1,14 @@
 import ImageComponent from '@/components/ImageComponent';
 import { useLocale } from '@/utils/hooks';
 import ChangeImageModal from './changeImageModal';
+import ChangeEmailPhone from './changeEmailPhone';
 import { useEffect, useRef, useState } from 'react';
 import styles from './styles.module.less';
 import { InfoStateType, ModalType } from '../types';
 const Info = () => {
   const locale = useLocale();
   const ModalRef = useRef<ModalType>();
+  const emailPhoneRef = useRef<ModalType>();
   const [infoData, setInfoData] = useState<InfoStateType>();
   const [image, setImage] = useState<string>('');
   const getInfo = () => {
@@ -26,7 +28,9 @@ const Info = () => {
   const changeImage = () => {
     ModalRef.current?.init();
   };
-
+  const modifyChange = (title: string) => {
+    emailPhoneRef.current?.init(title);
+  };
   return (
     <div className={styles.basicInformation}>
       <div className={styles.breadcrumbs}>账号中心 / 基本资料</div>
@@ -63,7 +67,12 @@ const Info = () => {
         <div className={styles.left}>{locale(`information.email`)}</div>
         <div className={styles.right}>
           <div className={styles.center}>luban2022@chery.com</div>
-          <div className={styles.change}>
+          <div
+            className={styles.change}
+            onClick={() => {
+              modifyChange(locale(`information.modify.email`));
+            }}
+          >
             {locale(`information.modify.email`)}
           </div>
         </div>
@@ -72,13 +81,21 @@ const Info = () => {
         <div className={styles.left}>{locale(`information.cell.phone`)}</div>
         <div className={styles.right}>
           <div className={styles.center}>18852809286</div>
-          <div className={styles.change}>
+          <div
+            className={styles.change}
+            onClick={() => {
+              modifyChange(locale(`information.modify.cell.phone`));
+            }}
+          >
             {locale(`information.modify.cell.phone`)}
           </div>
         </div>
       </div>
       <div>
         <ChangeImageModal ref={ModalRef}></ChangeImageModal>
+      </div>
+      <div>
+        <ChangeEmailPhone ref={emailPhoneRef}></ChangeEmailPhone>
       </div>
     </div>
   );

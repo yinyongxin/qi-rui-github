@@ -16,7 +16,7 @@
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "normalize.css": "^8.0.1",
-    "qirui-digitization-ui": "^1.1.9",
+    "qirui-digitization-ui": "^1.2.2",
     "react": "^18.2.0",
     "react-cropper": "^2.1.8",
     "react-dom": "^18.2.0",

@@ -6,5 +6,5 @@ export type InfoStateType = {
   workingYears: number;
 };
 export type ModalType = {
-  init: () => void;
+  init: (title?: string) => void;
 };

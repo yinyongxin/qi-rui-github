@@ -6,10 +6,8 @@ import {
   SidePropsType,
 } from 'qirui-digitization-ui/dist/SideMenu/interface';
 import { useEffect, useState } from 'react';
-import Info from './cpns/InfoRight';
-import TabInformation from './cpns/tabInformation';
+import Info from './cpns';
 import styles from './styles.module.less';
-import { InfoStateType } from './types';
 
 const basicInformation = () => {
   const locale = useLocale();
