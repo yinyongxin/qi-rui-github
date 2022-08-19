@@ -31,4 +31,5 @@ export const informationLocale = {
   'information.completed.email.modification': '恭喜，你已完成本次邮箱修改',
   'information.completed.phone.modification': '恭喜，你已完成本次手机号修改！',
   'information.get.verification.code': '获取验证码',
+  'information.account.security': '账号安全',
 };
