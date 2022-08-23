@@ -7,14 +7,17 @@ import {
   BarLineChart,
 } from '@/components/PageCharts';
 import {
-  lineChartConfig,
-  lineAreaChartConfig,
   barChartConfig,
-  barStackChartConfig,
+  barChart2Config,
+  barChart3Config,
+  barChart4Config,
+  lineChartConfig,
+  lineChart2Config,
+  lineChart3Config,
+  lineChart4Config,
   pieChartConfig,
-  barStripChartConfig,
-  barStripStackChartConfig,
   barLineChartConfig,
+  barLineChart2Config,
 } from './config';
 import { IRefInterface } from '@/components/PageCharts/types';
 
@@ -22,7 +25,8 @@ import styles from './styles.module.less';
 
 const ZLCharts: React.FC = () => {
   // state & props
-  const barData = [
+  const barData = [[10, 12, 23, 45, 24, 11, 12, 34, 45, 12, 34, 45]];
+  const barsData = [
     [36, 32, 25, 33],
     [23, 34, 15, 28],
     [35, 32, 35, 38],
@@ -86,18 +90,26 @@ const ZLCharts: React.FC = () => {
       <BarChart
         width="40%"
         height="336px"
-        data={[[10, 12, 23, 45, 24, 11, 12, 34, 45, 12, 34, 45]]}
+        data={barData}
         config={barChartConfig}
       />
-      <BarLineChart
+      <BarChart
         width="40%"
         height="336px"
-        data={[
-          [38, 32, 25, 33, 40, 35, 10, 22, 31, 32, 38, 42],
-          [36, 32, 25, 33, 40, 35, 28, 24, 31, 32, 38, 42],
-        ]}
-        config={barLineChartConfig}
-        ref={barLineRef}
+        data={barStackData}
+        config={barChart2Config}
+      />
+      <BarChart
+        width="40%"
+        height="336px"
+        data={barData}
+        config={barChart3Config}
+      />
+      <BarChart
+        width="40%"
+        height="336px"
+        data={barStripStackData}
+        config={barChart4Config}
       />
       <BarChart
         width="40%"
@@ -115,6 +127,7 @@ const ZLCharts: React.FC = () => {
         onClick={handleClick}
         ref={barRef}
       />
+
       <LineChart
         width="754px"
         height="336px"
@@ -125,62 +138,34 @@ const ZLCharts: React.FC = () => {
         config={lineChartConfig}
         ref={lineRef}
       />
-      <PieChart
+      <LineChart
+        width="754px"
+        height="336px"
+        data={async () => {
+          let res = await [[36, 32, 25, 33, 40, 35, 28, 24, 31, 32, 38, 42]];
+          return res;
+        }}
+        config={lineChart2Config}
+        ref={lineRef}
+      />
+      <LineChart
         width="754px"
         height="336px"
         data={async () => {
           let res = await [
-            { value: 1048, name: '模块一' },
-            { value: 735, name: '模块二' },
-            { value: 580, name: '模块三' },
-            { value: 484, name: '模块四' },
+            [36, 32, 25, 33, 40, 35, 28, 24, 31, 32, 38, 42],
+            [20, 18, 34, 23, 45, 24, 65, 12, 45, 12, 34, 10],
           ];
           return res;
         }}
-        config={pieChartConfig}
-        ref={pieRef}
-      />
-
-      <BarChart
-        width="40%"
-        height="336px"
-        data={barData}
-        config={barChartConfig}
-        onClick={handleClick}
-      />
-      <BarChart
-        width="40%"
-        height="336px"
-        data={barStackData}
-        config={barStackChartConfig}
-        onClick={handleClick}
-      />
-      <BarChart
-        width="40%"
-        height="336px"
-        data={barStripData}
-        config={barStripChartConfig}
-        onClick={handleClick}
-      />
-      <BarChart
-        width="40%"
-        height="336px"
-        data={barStripStackData}
-        config={barStripStackChartConfig}
-        onClick={handleClick}
-      />
-
-      <LineChart
-        width="754px"
-        height="336px"
-        data={lineData}
-        config={lineChartConfig}
+        config={lineChart3Config}
+        ref={lineRef}
       />
       <LineChart
         width="754px"
         height="336px"
         data={lineAreaData}
-        config={lineAreaChartConfig}
+        config={lineChart4Config}
       />
 
       <PieChart
@@ -193,8 +178,34 @@ const ZLCharts: React.FC = () => {
       <BarLineChart
         width="40%"
         height="336px"
-        data={barLineData}
+        data={async () => {
+          let res = await [
+            [40, 35, 28, 24],
+            [10, 35, 10, 22],
+          ];
+          return res;
+        }}
         config={barLineChartConfig}
+        ref={barLineRef}
+      />
+      <BarLineChart
+        width="40%"
+        height="336px"
+        /* data={[
+          [40, 35, 28, 24],
+          [10, 35, 10, 22],
+          [20, 15, 20, 32],
+        ]} */
+        data={async () => {
+          let res = await [
+            [40, 35, 28, 24],
+            [10, 35, 10, 22],
+            [20, 15, 20, 32],
+          ];
+          return res;
+        }}
+        config={barLineChart2Config}
+        ref={barLineRef}
       />
     </div>
   );

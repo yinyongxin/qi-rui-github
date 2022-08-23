@@ -30,6 +30,30 @@ const LineChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
     useEffect(() => {
       setOption({
         color: ['var(--design-success-color)', 'var(--design-base-color)'],
+        grid: {
+          top: 34,
+          // left: 24,
+          right: 24,
+          left: 50,
+          bottom: 100,
+        },
+        legend: config?.typeStyle
+          ? {
+              show: config?.typeStyle?.show,
+              textStyle: {
+                color:
+                  config?.typeStyle?.textColor ||
+                  'var(--design-neutral-color-2)',
+              },
+              bottom: config?.typeStyle?.textPosition?.isBottom
+                ? config?.typeStyle?.textPosition?.distance
+                : null,
+              top: config?.typeStyle?.textPosition?.isBottom
+                ? null
+                : config?.typeStyle?.textPosition?.distance,
+              itemGap: config?.typeStyle?.itemGap || 20,
+            }
+          : null,
         xAxis: {
           type: 'category',
           data: config?.xLabel,
@@ -70,6 +94,7 @@ const LineChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
         let handleData = {
           type: 'line',
           data: item,
+          name: config?.itemName?.[index],
           itemStyle: {
             color: config?.itemColor?.[index],
           },
@@ -79,7 +104,6 @@ const LineChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
               }
             : null,
           symbol: config?.seriesSymbolType || 'emptyCircle',
-          stack: 'xxx',
         };
         series.push(handleData);
       });
@@ -92,6 +116,7 @@ const LineChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
         let handleData = {
           type: 'line',
           data: item,
+          name: config?.itemName?.[index],
           itemStyle: {
             color: config?.itemColor?.[index],
           },
@@ -101,7 +126,6 @@ const LineChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
               }
             : null,
           symbol: config?.seriesSymbolType || 'emptyCircle',
-          stack: 'xxx',
         };
         series.push(handleData);
       });

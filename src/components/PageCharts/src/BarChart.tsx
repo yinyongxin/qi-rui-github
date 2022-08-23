@@ -14,6 +14,7 @@ const BarChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
   (props, ref: ForwardedRef<IRefInterface>) => {
     // state & props
     const { data, width = '754px', height = '336px', config, onClick } = props;
+
     const [option, setOption] = useState({});
     const [series, setSeries] = useState<any>([]);
 
@@ -29,35 +30,6 @@ const BarChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
         setSeries(renderData(data));
       }
     }, [config]);
-    useEffect(() => {
-      setOption({
-        xAxis: {
-          type: 'category',
-          data: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'],
-        },
-        yAxis: {
-          type: 'value',
-        },
-        series: [
-          {
-            data: [120, 200, 150, 80, 70, 110, 130, 190, 140, 90, 6],
-            type: 'bar',
-            itemStyle: {
-              normal: {
-                color: function (params: any) {
-                  console.log(params, 234);
-
-                  // 给出颜色组
-                  var colorList = ['#cca272', '#74608f', '#d7a02b', '#c8ba23'];
-                  //循环调用
-                  return colorList[params.dataIndex % colorList.length];
-                },
-              },
-            },
-          },
-        ],
-      });
-    }, [series]);
 
     useEffect(() => {
       setOption({
@@ -67,6 +39,28 @@ const BarChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
           'var(--design-charts-type3-color)',
           'var(--design-charts-type5-color)',
         ],
+        legend: config?.typeStyle
+          ? {
+              show: config?.typeStyle?.show,
+              textStyle: {
+                color: config?.typeStyle?.textColor,
+              },
+              bottom: config?.typeStyle?.textPosition?.isBottom
+                ? config?.typeStyle?.textPosition?.distance
+                : null,
+              top: config?.typeStyle?.textPosition?.isBottom
+                ? null
+                : config?.typeStyle?.textPosition?.distance,
+              itemGap: config?.typeStyle?.itemGap || 20,
+            }
+          : null,
+        grid: {
+          top: config?.grid?.top || 34,
+          // left: 24,
+          right: config?.grid?.right || 24,
+          left: config?.grid?.left || 34,
+          bottom: config?.grid?.bottom || 80,
+        },
         xAxis: {
           type: config?.barInverse ? 'value' : 'category',
           data: config?.barInverse ? null : config?.xLabel,
@@ -117,17 +111,38 @@ const BarChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
     // handles
     const renderData = (res: any[]) => {
       let series: any[] = [];
-      res.map((item: any, index: number) => {
-        let handleData = {
-          type: 'bar',
-          data: item,
-          itemStyle: {
-            color: config?.itemColor?.[index],
-          },
-          stack: config?.seriesStack,
-        };
-        series.push(handleData);
-      });
+      if (config?.seriesStack === 'stack' || config?.seriesStack == null) {
+        res.map((item: any, index: number) => {
+          let handleData = {
+            type: 'bar',
+            data: item,
+            barGap: config?.barGap || '0',
+            name: config?.itemName?.[index],
+            barWidth: config?.labelWidth,
+            itemStyle: {
+              color: config?.itemColor?.[index],
+            },
+            stack: config?.seriesStack,
+          };
+          series.push(handleData);
+        });
+      } else {
+        res.map((item: any, index: number) => {
+          let handleData = {
+            type: 'bar',
+            data: item,
+            barGap: config?.barGap || '0',
+            name: config?.itemName?.[index],
+            barWidth: config?.labelWidth,
+            itemStyle: {
+              color: config?.itemColor?.[index],
+            },
+            stack: renderStack(res),
+          };
+          series.push(handleData);
+        });
+      }
+
       return series;
     };
     const renderDataAsync = async (data: any) => {
@@ -137,6 +152,9 @@ const BarChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
         let handleData = {
           type: 'bar',
           data: item,
+          barGap: config?.barGap,
+          name: config?.itemName?.[index],
+          // barWidth: config?.labelWidth,
           itemStyle: {
             color: config?.itemColor?.[index],
           },
@@ -145,6 +163,10 @@ const BarChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
         series.push(handleData);
       });
       return series;
+    };
+
+    const renderStack = (res: any[]) => {
+      let len = res.length / 2;
     };
 
     return (

@@ -95,15 +95,6 @@ const ZLDeliveryTwo = () => {
             </div>
           );
         })}
-        {/* <BarLineChart
-          width="100%"
-          height="336px"
-          data={[
-            [38, 32, 25, 33, 40, 35, 10],
-            [36, 32, 25, 33, 40, 35, 28],
-          ]}
-          config={barLineChartConfig}
-        /> */}
       </div>
     </div>
   );

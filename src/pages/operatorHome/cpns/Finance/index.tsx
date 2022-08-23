@@ -4,6 +4,7 @@ import { Card, Title } from 'qirui-digitization-ui';
 import ZLCardHeader from '../CardHeader';
 
 import styles from './styles.module.less';
+import { useNavigate } from 'react-router-dom';
 
 const ZLManagerFinance = () => {
   // state & props
@@ -55,6 +56,7 @@ const ZLManagerFinance = () => {
   // redux hooks
 
   // other hooks
+  const navigate = useNavigate();
 
   // handles
   const headerStyle = {
@@ -66,6 +68,10 @@ const ZLManagerFinance = () => {
     color: 'var(--design-neutral-color-2)',
     padding: '16px',
   };
+  const toItem = () => {
+    navigate('/operator/item');
+  };
+
   return (
     <div className={styles.zlFinanceWrapper}>
       <Title title="财务" type="tooltip"></Title>
@@ -79,7 +85,7 @@ const ZLManagerFinance = () => {
                 headerStyle={headerStyle}
                 bodyStyle={bodyStyle}
               >
-                <ul className={styles.info}>
+                <ul className={styles.info} onClick={toItem}>
                   <li className={styles.year}>
                     <span>同比</span>
                     <span className={styles.colorGreen}>+8.22%</span>

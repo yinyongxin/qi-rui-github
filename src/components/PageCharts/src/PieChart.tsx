@@ -50,11 +50,13 @@ const PieChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
           formatter: '{a}<br/>{b}:{c} ({d}%)',
         },
         legend: {
-          right: '80',
-          top: 'center',
-          textStyle: { color: '#fff' },
-          orient: 'vertical',
-          itemGap: 20,
+          orient: config?.legend?.orient || 'horizontal',
+          right: config?.legend?.right || 0,
+          top: config?.legend?.top || 'center',
+          textStyle: {
+            color: config?.legend?.textColor || '#ffffff',
+          },
+          itemGap: config?.legend?.itemGap || 20,
           formatter: (e: string) => {
             var total = 0;
             var val = 0;
@@ -89,7 +91,7 @@ const PieChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
     );
 
     // handles
-    const renderData = (res: any[]) => {
+    const renderData = (data: any[]) => {
       let series: any[] = [
         {
           name: config?.seriesName || 'test',
@@ -99,6 +101,7 @@ const PieChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
             show: config?.pieLabelIsShow || false,
           },
           color: config?.itemColor,
+          center: config?.center || ['35%', '53%'],
           data,
         },
       ];

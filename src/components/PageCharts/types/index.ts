@@ -23,8 +23,22 @@ export interface IRefInterface {
 export interface ChartsConfigInterface {
   /**x轴数据 */
   xLabel?: any[];
+  /**item名称 */
+  itemName?: string[];
   /** 是否显示坐标刻度 */
   axisTickIsShow?: boolean;
+  /**item宽度 */
+  labelWidth?: string;
+  /**显示分类样式 */
+  typeStyle?: {
+    show: boolean;
+    textColor?: string;
+    textPosition?: {
+      isBottom?: boolean;
+      distance?: string | number;
+    };
+    itemGap?: number;
+  };
   /**网格线类型 */
   splitLineType?: 'solid' | 'dashed' | 'dotted';
   /**网格线颜色 */
@@ -61,14 +75,39 @@ export interface ChartsConfigInterface {
   titleColor?: string;
   /**饼状图提示框标题 */
   seriesName?: string;
+  computedColor?: string[];
 
   barWidth?: string;
   loading?: boolean;
+  /**grid布局 */
+  grid?: {
+    top?: number;
+    right?: number;
+    left?: number;
+    bottom?: number;
+  };
+  /**多个柱状图之间间距 */
+  barGap?: number | string;
+  /**饼状图位置 */
+  center?: string[];
+  /**legend样式 */
+  legend?: {
+    orient?: string;
+    right?: string;
+    left?: string;
+    top?: string;
+    itemGap?: number;
+    textColor?: string;
+  };
 }
 
 export interface BarChartConfig {
   /**x轴label数据 */
   xLabel: any[];
+  /**item名称 */
+  itemName?: string[];
+  /**item宽度 */
+  labelWidth?: string;
   /** 是否显示坐标刻度 */
   axisTickIsShow?: boolean;
   /**网格线类型 */
@@ -77,15 +116,36 @@ export interface BarChartConfig {
   splitLineColor?: string;
   /**图表item颜色 */
   itemColor?: string[];
-  /**堆叠标识 */
-  seriesStack?: string;
   /**是否为堆叠图 */
+  seriesStack?: 'stack' | 'stacks';
+  /**是否为条形图 */
   barInverse?: boolean;
+  /**显示分类样式 */
+  typeStyle?: {
+    show: boolean;
+    textColor?: string;
+    textPosition?: {
+      isBottom?: boolean;
+      distance?: string | number;
+    };
+    itemGap?: number;
+  };
+  /**grid布局 */
+  grid?: {
+    top?: number;
+    right?: number;
+    left?: number;
+    bottom?: number;
+  };
+  /**多个柱状图之间间距 */
+  barGap?: number | string;
 }
 
 export interface LineChartConfig {
   /**x轴label数据 */
   xLabel: any[];
+  /**item名称 */
+  itemName?: string[];
   /** 是否显示坐标刻度 */
   axisTickIsShow?: boolean;
   /**网格线类型 */
@@ -111,6 +171,16 @@ export interface LineChartConfig {
   itemColor?: string[];
   /**是否去除折线图两边空白 */
   isBoundaryGap?: boolean;
+  /**显示分类样式 */
+  typeStyle?: {
+    show: boolean;
+    textColor?: string;
+    textPosition?: {
+      isBottom?: boolean;
+      distance?: string | number;
+    };
+    itemGap?: number;
+  };
 }
 
 export interface PieChartConfig {
@@ -124,11 +194,24 @@ export interface PieChartConfig {
   pieLabelIsShow?: boolean;
   /**饼状图提示框标题 */
   seriesName?: string;
+  /**饼状图位置 */
+  center?: string[];
+  /**legend样式 */
+  legend?: {
+    orient?: string;
+    right?: string;
+    left?: string;
+    top?: string;
+    itemGap?: number;
+    textColor?: string;
+  };
 }
 
 export interface BarLineChartConfig {
   /**x轴label数据 */
   xLabel: any[];
+  /**item名称 */
+  itemName?: string[];
   /** 是否显示坐标刻度 */
   axisTickIsShow?: boolean;
   /**网格线类型 */
@@ -156,4 +239,25 @@ export interface BarLineChartConfig {
   isAreaLine?: boolean;
   /**区域折线颜色 */
   areaStyleColor?: string[];
+  /**显示分类样式 */
+  typeStyle?: {
+    show: boolean;
+    textColor?: string;
+    textPosition?: {
+      isBottom?: boolean;
+      distance?: string | number;
+    };
+    itemGap?: number;
+  };
+  /**计算颜色 */
+  computedColor?: string[];
+  /**多个柱状图之间间距 */
+  barGap?: number | string;
+  /**grid布局 */
+  grid?: {
+    top?: number;
+    right?: number;
+    left?: number;
+    bottom?: number;
+  };
 }

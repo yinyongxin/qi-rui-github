@@ -1,0 +1,59 @@
+.zlOperatorItemWrapper {
+  // 头部区域
+  .head {
+    height: 113px;
+    background-color: rgba(255, 255, 255, 0.12);
+    padding: 0 24px;
+    .breadCrumb {
+      padding: 16px 0;
+    }
+    .types {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .title {
+        font-style: normal;
+        margin: 0;
+        padding: 0;
+        font-weight: 500;
+        font-size: var(--design-font-size-18);
+        color: var(--design-base-color);
+      }
+      .fen {
+
+      }
+    }
+  }
+  // 主体区域
+  .info {
+    box-sizing: border-box;
+    padding: 0 24px;
+    margin-top: 32px;
+    .chartsOne {
+      display: flex;
+      flex-wrap: wrap;
+      height: 375px;
+      &>div {
+        width: 50%;
+      }
+    }
+    .chartsTwo {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 24px;
+      height: 370px;
+      &>div {
+        width: 33.33%;
+      }
+    }
+    .chartsThree {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 24px;
+      height: 318px;
+      &>div {
+        width: 25%;
+      }
+    }
+  }
+}

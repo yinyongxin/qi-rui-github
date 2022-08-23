@@ -1,0 +1,50 @@
+.zlManagerTwoWrapper {
+  // 主体区域
+  .header {
+    display: flow-root;
+    background-color: #111111;
+    height: 502px;
+    padding: 0 24px;
+    .breadCrumb {
+      margin: 16px 0;
+    }
+    .title {
+      font-size: var(--design-font-size-18);
+      color: var(--design-base-color);
+    }
+    .type {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 12px;
+      .desc {
+        width: 1200px;
+        font-size: var(--design-font-size-14);
+        color: var(--design-neutral-color-2);
+        line-height: 22px;
+        & span:first-child {
+          display: block;
+        }
+      }
+    }
+    .charts {
+      height: 286px;
+      margin-top: 58px;
+    }
+  }
+  // 关联区域
+  .about {
+    margin-top: 48px;
+    padding: 0 24px;
+    .aboutTitle {
+      font-size: var(--design-font-size-18);
+      color: var(--design-base-color);
+    }
+    .aboutCharts {
+      display: flex;
+      &>div {
+        width: 25%;
+      }
+    }
+  }
+}
