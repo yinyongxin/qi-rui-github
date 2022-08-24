@@ -4,9 +4,11 @@ import { appLocalStorage } from '@/utils/tools';
 import { useEffect } from 'react'
 const Home = () => {
   return (
-    <div>
-      <ExempleComponent />
-      Home
+    <div style={{
+      height: '100%',
+      fontSize: 60
+    }} className='flex-center'>
+      Welcome
     </div>
   )
 }

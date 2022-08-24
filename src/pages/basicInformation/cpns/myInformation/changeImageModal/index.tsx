@@ -13,7 +13,7 @@ import Cropper from 'react-cropper';
 
 import 'cropperjs/dist/cropper.css';
 const defaultSrc = 'images/info.png';
-const ModalComment = (props, ref) => {
+const ModalComment = (props: any, ref: React.Ref<any> | undefined) => {
   const locale = useLocale();
   const ModalRef = useRef<ModalHandle>();
   const [image, setImage] = useState(defaultSrc);

@@ -27,7 +27,7 @@ export const routes: RouteObject[] = [
     element: <Layout />,
     children: [
       {
-        path: 'home',
+        path: '/',
         element: <Home />,
       },
       {
@@ -83,10 +83,10 @@ export const routes: RouteObject[] = [
         path: 'operator/item',
         element: <ZLOperatorItemCharts />,
       },
-      // {
-      //   path: 'basicInformation',
-      //   element: <BasicInformation />,
-      // },
+      {
+        path: 'basicInformation',
+        element: <BasicInformation />,
+      },
       {
         path: 'chartsHome',
         element: <ZLChartsHome />,
