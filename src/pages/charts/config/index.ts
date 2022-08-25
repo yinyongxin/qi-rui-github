@@ -43,6 +43,39 @@ export let barChart4Config: BarChartConfig = {
   barInverse: true,
   seriesStack: 'stack',
 };
+export let barChart5Config: BarChartConfig = {
+  xLabel: ['近3年周期', '近2年周期', '近1年周期', '今年'],
+  itemName: ['总资产净利率', '目标值', '权益系数'],
+  typeStyle: {
+    show: true,
+    textColor: 'var(--design-neutral-color-2)',
+    textPosition: {
+      isBottom: true,
+      distance: 30,
+    },
+  },
+  axisTickIsShow: false,
+  splitLineType: 'dashed',
+  splitLineColor: 'var(--design-neutral-color-5)',
+  itemColor: [
+    'var(--design-charts-type3-color)',
+    '#999999',
+    'var(--design-charts-type1-color)',
+    '#999999',
+  ],
+  seriesStack: [
+    {
+      from: 0,
+      to: 1,
+      str: 'stacks0',
+    },
+    {
+      from: 2,
+      to: 3,
+      str: 'stacks1',
+    },
+  ],
+};
 
 export let lineChartConfig: LineChartConfig = {
   xLabel: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],

@@ -7,10 +7,10 @@ import React, {
 } from 'react';
 
 import BaseChart from './BaseChart';
-import { ChartPropsInterface, IRefInterface } from '../types';
+import { BarChartPropsInterface, IRefInterface } from '../types';
 import { isArray } from 'lodash';
 
-const BarChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
+const BarChart = React.forwardRef<IRefInterface, BarChartPropsInterface>(
   (props, ref: ForwardedRef<IRefInterface>) => {
     // state & props
     const { data, width = '754px', height = '336px', config, onClick } = props;
@@ -30,7 +30,6 @@ const BarChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
         setSeries(renderData(data));
       }
     }, [config]);
-
     useEffect(() => {
       setOption({
         color: [
@@ -137,7 +136,7 @@ const BarChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
             itemStyle: {
               color: config?.itemColor?.[index],
             },
-            stack: renderStack(res),
+            stack: renderStack(res, config?.seriesStack as any[], index),
           };
           series.push(handleData);
         });
@@ -148,25 +147,49 @@ const BarChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
     const renderDataAsync = async (data: any) => {
       let series: any[] = [];
       let result = await data();
-      result.map((item: any, index: number) => {
-        let handleData = {
-          type: 'bar',
-          data: item,
-          barGap: config?.barGap,
-          name: config?.itemName?.[index],
-          // barWidth: config?.labelWidth,
-          itemStyle: {
-            color: config?.itemColor?.[index],
-          },
-          stack: config?.seriesStack,
-        };
-        series.push(handleData);
-      });
+      if (config?.seriesStack === 'stack' || config?.seriesStack == null) {
+        result.map((item: any, index: number) => {
+          let handleData = {
+            type: 'bar',
+            data: item,
+            barGap: config?.barGap || '0',
+            name: config?.itemName?.[index],
+            barWidth: config?.labelWidth,
+            itemStyle: {
+              color: config?.itemColor?.[index],
+            },
+            stack: config?.seriesStack,
+          };
+          series.push(handleData);
+        });
+      } else {
+        result.map((item: any, index: number) => {
+          let handleData = {
+            type: 'bar',
+            data: item,
+            barGap: config?.barGap || '0',
+            name: config?.itemName?.[index],
+            barWidth: config?.labelWidth,
+            itemStyle: {
+              color: config?.itemColor?.[index],
+            },
+            stack: renderStack(data, config?.seriesStack as any[], index),
+          };
+          series.push(handleData);
+        });
+      }
       return series;
     };
 
-    const renderStack = (res: any[]) => {
-      let len = res.length / 2;
+    const renderStack = (res: any[], stack: any[], index: number) => {
+      // let len = res.length / stack.length;
+      if (index >= 0 && index < 2) {
+        return 'stacks0';
+      } else if (index >= 2 && index <= 3) {
+        return 'stack1';
+      } else {
+        return 'stack2';
+      }
     };
 
     return (

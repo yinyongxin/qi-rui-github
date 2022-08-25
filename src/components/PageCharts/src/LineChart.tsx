@@ -6,10 +6,10 @@ import React, {
 } from 'react';
 
 import BaseChart from './BaseChart';
-import { ChartPropsInterface, IRefInterface } from '../types';
+import { LineChartPropsInterface, IRefInterface } from '../types';
 import { isArray } from 'lodash';
 
-const LineChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
+const LineChart = React.forwardRef<IRefInterface, LineChartPropsInterface>(
   (props, ref: ForwardedRef<IRefInterface>) => {
     // state & props
     const { data, width = '745px', height = '336px', config } = props;

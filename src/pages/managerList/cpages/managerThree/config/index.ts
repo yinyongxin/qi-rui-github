@@ -1,9 +1,4 @@
-import {
-  BarLineChartConfig,
-  LineChartConfig,
-  PieChartConfig,
-  BarChartConfig,
-} from '@/components/PageCharts/types';
+import { LineChartConfig, BarChartConfig } from '@/components/PageCharts/types';
 
 export let lineChartConfig: LineChartConfig = {
   xLabel: [1, 2, 3, 4],
@@ -30,7 +25,7 @@ export let lineChartConfig: LineChartConfig = {
 
 export let barChartConfig: BarChartConfig = {
   xLabel: ['近3年周期', '近2年周期', '近1年周期', '今年'],
-  itemName: ['总资产净利率', '权益系数', '目标值'],
+  itemName: ['总资产净利率', '目标值', '权益系数'],
   typeStyle: {
     show: true,
     textColor: 'var(--design-neutral-color-2)',
@@ -42,5 +37,22 @@ export let barChartConfig: BarChartConfig = {
   axisTickIsShow: false,
   splitLineType: 'dashed',
   splitLineColor: 'var(--design-neutral-color-5)',
-  seriesStack: 'stacks',
+  itemColor: [
+    'var(--design-charts-type3-color)',
+    '#999999',
+    'var(--design-charts-type1-color)',
+    '#999999',
+  ],
+  seriesStack: [
+    {
+      from: 0,
+      to: 1,
+      str: 'stacks0',
+    },
+    {
+      from: 2,
+      to: 3,
+      str: 'stacks1',
+    },
+  ],
 };

@@ -7,9 +7,9 @@ import React, {
 
 import { isArray } from 'lodash';
 import BaseChart from './BaseChart';
-import { ChartPropsInterface, IRefInterface } from '../types';
+import { PieChartPropsInterface, IRefInterface } from '../types';
 
-const PieChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
+const PieChart = React.forwardRef<IRefInterface, PieChartPropsInterface>(
   (props, ref: ForwardedRef<IRefInterface>) => {
     // state & props
     const { data, width = '754px', height = '336px', config } = props;
@@ -100,7 +100,7 @@ const PieChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
           label: {
             show: config?.pieLabelIsShow || false,
           },
-          color: config?.itemColor,
+          color: config?.titleColor,
           center: config?.center || ['35%', '53%'],
           data,
         },
@@ -117,7 +117,7 @@ const PieChart = React.forwardRef<IRefInterface, ChartPropsInterface>(
           label: {
             show: config?.pieLabelIsShow || false,
           },
-          color: config?.itemColor,
+          color: config?.titleColor,
           data: result,
         },
       ];

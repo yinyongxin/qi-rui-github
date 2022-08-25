@@ -1,9 +1,4 @@
-import {
-  BarLineChartConfig,
-  LineChartConfig,
-  PieChartConfig,
-  BarChartConfig,
-} from '@/components/PageCharts/types';
+import { BarLineChartConfig } from '@/components/PageCharts/types';
 
 export let barLineChartConfig: BarLineChartConfig = {
   xLabel: [1, 2, 3, 4],
