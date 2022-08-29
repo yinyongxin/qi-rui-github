@@ -12,11 +12,12 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
     "ahooks": "^3.6.2",
+    "axios": "^0.27.2",
     "echarts": "^5.3.3",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "normalize.css": "^8.0.1",
-    "qirui-digitization-ui": "^1.2.2",
+    "qirui-digitization-ui": "^1.2.4",
     "react": "^18.2.0",
     "react-cropper": "^2.1.8",
     "react-dom": "^18.2.0",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.182",
+    "@types/node": "^18.7.13",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@types/react-redux": "^7.1.24",
