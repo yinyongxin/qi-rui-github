@@ -180,7 +180,6 @@ const BarChart = React.forwardRef<IRefInterface, BarChartPropsInterface>(
       }
       return series;
     };
-
     const renderStack = (res: any[], stack: any[], index: number) => {
       // let len = res.length / stack.length;
       if (index >= 0 && index < 2) {

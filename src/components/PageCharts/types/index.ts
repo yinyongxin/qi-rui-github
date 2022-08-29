@@ -285,3 +285,5 @@ export interface BarLineChartConfig {
     bottom?: number;
   };
 }
+
+export const Api = {};

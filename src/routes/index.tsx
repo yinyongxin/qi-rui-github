@@ -83,10 +83,10 @@ export const routes: RouteObject[] = [
         path: 'operator/item',
         element: <ZLOperatorItemCharts />,
       },
-      // {
-      //   path: 'basicInformation',
-      //   element: <BasicInformation />,
-      // },
+      {
+        path: 'basicInformation',
+        element: <BasicInformation />,
+      },
       {
         path: 'chartsHome',
         element: <ZLChartsHome />,

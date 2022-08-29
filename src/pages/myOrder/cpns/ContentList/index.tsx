@@ -91,6 +91,97 @@ const ZLContentList = () => {
       status: 2,
       dateTime: '2021-02-03 18:56:23',
     },
+    {
+      id: 10,
+      title: 'hpv值超5%阈值',
+      originator: '张长弓',
+      status: 2,
+      dateTime: '2021-02-03 18:56:23',
+    },
+    {
+      id: 11,
+      title: 'hpv值超5%阈值',
+      originator: '张长弓',
+      status: 2,
+      dateTime: '2021-02-03 18:56:23',
+    },
+    {
+      id: 12,
+      title: 'hpv值超5%阈值',
+      originator: '张长弓',
+      status: 2,
+      dateTime: '2021-02-03 18:56:23',
+    },
+    {
+      id: 10,
+      title: 'hpv值超5%阈值',
+      originator: '张长弓',
+      status: 2,
+      dateTime: '2021-02-03 18:56:23',
+    },
+    {
+      id: 11,
+      title: 'hpv值超5%阈值',
+      originator: '张长弓',
+      status: 2,
+      dateTime: '2021-02-03 18:56:23',
+    },
+    {
+      id: 12,
+      title: 'hpv值超5%阈值',
+      originator: '张长弓',
+      status: 2,
+      dateTime: '2021-02-03 18:56:23',
+    },
+    {
+      id: 12,
+      title: 'hpv值超5%阈值',
+      originator: '张长弓',
+      status: 2,
+      dateTime: '2021-02-03 18:56:23',
+    },
+    {
+      id: 10,
+      title: 'hpv值超5%阈值',
+      originator: '张长弓',
+      status: 2,
+      dateTime: '2021-02-03 18:56:23',
+    },
+    {
+      id: 11,
+      title: 'hpv值超5%阈值',
+      originator: '张长弓',
+      status: 2,
+      dateTime: '2021-02-03 18:56:23',
+    },
+    {
+      id: 12,
+      title: 'hpv值超5%阈值',
+      originator: '张长弓',
+      status: 2,
+      dateTime: '2021-02-03 18:56:23',
+    },
+    {
+      id: 10,
+      title: 'hpv值超5%阈值',
+      originator: '张长弓',
+      status: 2,
+      dateTime: '2021-02-03 18:56:23',
+    },
+    {
+      id: 11,
+      title: 'hpv值超5%阈值',
+      originator: '张长弓',
+      status: 2,
+      dateTime: '2021-02-03 18:56:23',
+    },
+    {
+      id: 12,
+      title: 'hpv值超5%阈值',
+      originator: '张长弓',
+      status: 2,
+      dateTime: '2021-02-03 18:56:23',
+    },
   ]);
 
   // redux hooks
@@ -128,7 +219,7 @@ const ZLContentList = () => {
             <Card
               title={item.title}
               status={handleStatus(item.status)}
-              width={302}
+              // width={312}
               headerStyle={headerStyle}
               bodyStyle={bodyStyle}
             >
