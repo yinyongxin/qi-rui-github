@@ -1,0 +1,36 @@
+.zlManagerSevenWrapper {
+  .header {
+    display: flow-root;
+    padding: 0 24px;
+    height: 103px;
+    background-color: #111111;
+    .breadCrumb {
+      margin: 16px 0;
+    }
+    .type {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .title {
+        font-size: var(--design-font-size-18);
+        color: var(--design-base-color);
+      }
+    }
+  }
+  .charts {
+    padding: 0 24px;
+    display: flex;
+    &>div {
+      flex: 1;
+    }
+    .in {
+      .desc {
+        color: var(--design-neutral-color);
+        opacity: 0.6;
+      }
+      .file {
+        margin-top: 26px;
+      }
+    }
+  }
+}

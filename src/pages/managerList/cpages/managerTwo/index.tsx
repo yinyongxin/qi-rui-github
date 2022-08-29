@@ -1,11 +1,11 @@
 import React from 'react';
 
+import { useNavigate } from 'react-router-dom';
 import { Card } from 'qirui-digitization-ui';
 import { BarLineChart } from '@/components/PageCharts';
 import { barLineChartConfig } from './config';
 
 import styles from './styles.module.less';
-import { useNavigate } from 'react-router-dom';
 
 const ZLManagerTwo = () => {
   // state & props

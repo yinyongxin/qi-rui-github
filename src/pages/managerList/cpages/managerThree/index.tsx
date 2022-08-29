@@ -1,13 +1,17 @@
 import React from 'react';
 
+import { useNavigate } from 'react-router-dom';
+import { Card } from 'qirui-digitization-ui';
 import { BarChart, LineChart } from '@/components/PageCharts';
 import { lineChartConfig, barChartConfig } from './config';
 
 import styles from './styles.module.less';
-import { Card } from 'qirui-digitization-ui';
 
 const ZLManagerThree = () => {
   // state & props
+
+  // other hooks
+  const navigate = useNavigate();
 
   // handles
   const headerStyle = {
@@ -16,6 +20,9 @@ const ZLManagerThree = () => {
   };
   const bodyStyle = {
     padding: 0,
+  };
+  const toFour = () => {
+    navigate('/manager/list/four');
   };
 
   return (
@@ -34,7 +41,7 @@ const ZLManagerThree = () => {
             headerStyle={headerStyle}
             bodyStyle={bodyStyle}
           >
-            <div className={styles.in}>
+            <div className={styles.in} onClick={toFour}>
               <LineChart
                 width="100%"
                 height="327px"

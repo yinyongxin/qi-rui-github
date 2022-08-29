@@ -11,6 +11,7 @@ import {
   barChart2Config,
   barChart3Config,
   barChart4Config,
+  barChart5Config,
   lineChartConfig,
   lineChart2Config,
   lineChart3Config,
@@ -126,6 +127,31 @@ const ZLCharts: React.FC = () => {
         config={barChartConfig}
         onClick={handleClick}
         ref={barRef}
+      />
+      <BarChart
+        width="40%"
+        height="336px"
+        data={[
+          [18, 12, 10, 15],
+          [28, 15, 20, 30],
+          [34, 18, 25, 32],
+          [40, 25, 30, 38],
+        ]}
+        config={barChart5Config}
+      />
+      <BarChart
+        width="40%"
+        height="336px"
+        data={async () => {
+          let res = [
+            [18, 12, 10, 15],
+            [28, 15, 20, 30],
+            [34, 18, 25, 32],
+            [40, 25, 30, 38],
+          ];
+          return res;
+        }}
+        config={barChart5Config}
       />
 
       <LineChart
