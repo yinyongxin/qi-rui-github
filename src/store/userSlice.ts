@@ -1,23 +1,35 @@
 import { createSlice } from '@reduxjs/toolkit'
-
-const initialState = {
+export interface UserInfoInterface {
   info: {
-    name: '',
-    age: '',
-    id: '',
-  }
+    admin: boolean
+    avatar: string
+    createBy: null
+    createTime: null
+    delFlag: string
+    deptId: null
+    email: string
+    id: number
+    inductionTime: null
+    jobAge: null
+    jobNumber: null
+    phoneNumber: string
+    status: string
+    updateBy: number
+    updateTime: string
+    username: string
+  } | null;
+}
+
+const initialState: UserInfoInterface = {
+  info: JSON.parse(localStorage.getItem('user'))
 }
 
 export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    updata: state => {
-      state.info  = {
-        name: '',
-        age: '',
-        id: '',
-      }
+    updater: (state, { payload }) => {
+      state.info = payload
     },
   },
 })
