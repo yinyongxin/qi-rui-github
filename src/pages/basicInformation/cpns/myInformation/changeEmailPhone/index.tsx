@@ -7,27 +7,36 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { useLocale } from '@/utils/hooks';
-import { Modal, Steps, Input } from 'qirui-digitization-ui';
+import { useAppDispatch, useAppSelector, useLocale } from '@/utils/hooks';
+import { LoginApi } from '@/services';
+import { Modal, Steps, Input, Form, FormItem, Message } from 'qirui-digitization-ui';
 import { ModalHandle } from 'qirui-digitization-ui/dist/Modal/interface';
 import styles from './index.module.less';
-import { ModalType } from '../../types';
+import { ModalType, PhoneCodeType } from '../../types';
+import { userActions } from '@/store/userSlice';
 const { Step } = Steps;
 
 const ModalEmailPhone: ForwardRefRenderFunction<ModalType, any> = (
   props,
   ref
 ) => {
+  const [form] = Form.useForm()
+  const [form1] = Form.useForm()
   const locale = useLocale();
   const [title, setTitle] = useState('');
   const ModalRef = useRef<ModalHandle>();
   const [current, setCurrent] = useState(1);
   const [time, setTime] = useState<number>(60);
   const timeRef = useRef<any>();
+  const phoneCode = useRef<PhoneCodeType>()
+  const dispatch = useAppDispatch();
+  const { info } = useAppSelector((state) => state.user);
   const init = (str?: string) => {
+    setCurrent(1)
     setTitle(str ?? '');
     ModalRef.current?.open();
   };
+
   const clickInterval = () => {
     clearInterval(timeRef.current);
     if (time && time > 0) {
@@ -36,13 +45,49 @@ const ModalEmailPhone: ForwardRefRenderFunction<ModalType, any> = (
       }, 1000);
     }
   };
+  const getVerificationCode = async () => {
+    let res = await LoginApi.getPhoneNumberCode()
+    phoneCode.current = res.data
+    if (time === 60) {
+      clickInterval();
+    }
+  }
+  const onOSubmit = async () => {
+    const updatesStore = async () => {
+      const res = await LoginApi.sysUser({ userId: info?.id })
+      localStorage.setItem('user', JSON.stringify(res.data))
+      dispatch(userActions.updater(res.data))
+      setCurrent(3)
+    }
+    if (title === locale(`information.modify.cell.phone`) && current === 2) {
+      try {
+        await LoginApi.updatePhoneNumber({
+          ...form.getFields(),
+          uuid: phoneCode.current?.uuid
+        })
+        updatesStore()
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    if (title === locale(`information.modify.email`) && current === 2) {
+      console.log();
+
+      try {
+        await LoginApi.updateEmail(form1.getFields().email)
+        await updatesStore()
+      } catch (error) {
+        console.log(error);
+      }
+
+    }
+  }
   useEffect(() => {
     if (time === 0) {
       clearInterval(timeRef.current);
       setTime(60);
     }
   }, [time]);
-
   useImperativeHandle<any, ModalType>(ref, () => ({
     init,
   }));
@@ -59,6 +104,9 @@ const ModalEmailPhone: ForwardRefRenderFunction<ModalType, any> = (
       }}
       cancelText={locale('information.cancel')}
       okText={locale('information.next.step')}
+      onOK={() => {
+        onOSubmit()
+      }}
     >
       <div className={styles.step}>
         <Steps current={current}>
@@ -89,44 +137,58 @@ const ModalEmailPhone: ForwardRefRenderFunction<ModalType, any> = (
         </div>
       )}
       {title === locale(`information.modify.email`) && current === 2 && (
-        <div className={styles.input}>
-          <Input
-            width={400}
-            height={48}
-            placeholder={locale('information.enter.newEmail')}
-          ></Input>
+        <div className={styles.inputEmailContent}>
+          <Form form={form1}>
+            <FormItem name='email'>
+              <div className={styles.inputEmail}>
+                <Input
+                  width={400}
+                  height={48}
+                  inputAttributes={{ placeholder: locale('information.enter.newEmail'), autoComplete: "off" }}
+
+                ></Input>
+              </div>
+            </FormItem>
+          </Form>
         </div>
       )}
       {title === locale(`information.modify.cell.phone`) && current === 2 && (
         <div className={styles.phoneInput}>
-          <div className={styles.phone}>
-            <Input
-              width={400}
-              height={48}
-              placeholder={locale('information.enter.phone')}
-            ></Input>
-          </div>
-          <div className={styles.code}>
-            <Input
-              width={400}
-              height={48}
-              placeholder={locale('information.enter.code')}
-              suffix={
-                <div
-                  className={styles.suffix}
-                  onClick={() => {
-                    if (time === 60) {
-                      clickInterval();
-                    }
-                  }}
-                >
-                  {time === 60
-                    ? locale('information.get.verification.code')
-                    : time}
-                </div>
-              }
-            ></Input>
-          </div>
+
+          <Form form={form}>
+            <FormItem name='phoneNumber'>
+              <div className={styles.phone}>
+                <Input
+                  width={400}
+                  height={48}
+                  inputAttributes={{ placeholder: locale('information.enter.phone'), autoComplete: "off" }}
+                ></Input>
+              </div>
+            </FormItem>
+            <FormItem name='code'>
+              <div className={styles.code}>
+                <Input
+                  width={400}
+                  height={48}
+                  inputAttributes={{ placeholder: locale('information.enter.code'), autoComplete: "off" }}
+                  suffix={
+                    <div
+                      className={styles.suffix}
+                      onClick={() => {
+                        getVerificationCode()
+
+                      }}
+                    >
+                      {time === 60
+                        ? locale('information.get.verification.code')
+                        : time}
+                    </div>
+                  }
+                ></Input>
+              </div>
+            </FormItem>
+          </Form>
+
         </div>
       )}
       {current === 3 && (

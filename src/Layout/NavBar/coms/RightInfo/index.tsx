@@ -104,9 +104,8 @@ const RightInfo: FC<ExempleComponentPropType> = () => {
                 return (
                   <div
                     key={index}
-                    className={`${styles.orderItem} ${
-                      index != 0 ? styles.orderItemBorder : ''
-                    }`}
+                    className={`${styles.orderItem} ${index != 0 ? styles.orderItemBorder : ''
+                      }`}
                   >
                     <div className={styles.title}>{item.title}</div>
                     <div className={styles.time}>{item.time}</div>
@@ -184,7 +183,10 @@ const RightInfo: FC<ExempleComponentPropType> = () => {
               </div>
               <div>{locale('information.account.security')}</div>
             </div>
-            <div className={styles.loginOut}>{locale('global.loginOut')}</div>
+            <div className={styles.loginOut} onClick={() => {
+              console.log(1);
+
+            }}>{locale('global.loginOut')}</div>
           </div>
         </div>
       </div>
