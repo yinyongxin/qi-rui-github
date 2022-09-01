@@ -1,6 +1,5 @@
 import { FC, useEffect, useRef, useState } from 'react';
-import { ExempleComponentPropType, OrderNotificationType } from './types';
-import styles from './styles.module.less';
+
 import { useLocale } from '@/utils/hooks';
 import {
   Modal,
@@ -8,12 +7,15 @@ import {
   Image,
   Input,
   Select,
-  Title,
   Upload,
   FormItem,
   Message,
+  Page,
 } from 'qirui-digitization-ui';
+import { ExempleComponentPropType, OrderNotificationType } from './types';
 import { ModalHandle } from 'qirui-digitization-ui/dist/Modal/interface';
+
+import styles from './styles.module.less';
 
 const RightInfo: FC<ExempleComponentPropType> = () => {
   const [orderNotification, setOrderNotification] =

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useNavigate } from 'react-router-dom';
-import { Card } from 'qirui-digitization-ui';
+import { Card, Page } from 'qirui-digitization-ui';
 import { BarChart, LineChart } from '@/components/PageCharts';
 import { barChartConfig, lineChartConfig, barChart2Config } from './config';
 
@@ -24,15 +24,45 @@ const ZLManagerFour = () => {
   const toFive = () => {
     navigate('/manager/list/five');
   };
+  const renderTemplate = () => {
+    return (
+      <div className={styles.types}>
+        <h2 className={styles.title}>总资产净利率</h2>
+        <div className={styles.fen}>
+          <span>日期选择</span>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className={styles.zlManagerFourWrapper}>
       <div className={styles.header}>
-        <div className={styles.breadCrumb}>面包屑</div>
-        <div className={styles.type}>
-          <span className={styles.title}>产品线指标概况</span>
-          <div className={styles.fen}>分类</div>
-        </div>
+        <Page
+          pageHeader={{
+            descriptions: renderTemplate(),
+            breadcrumb: {
+              list: [
+                {
+                  title: '首页',
+                  path: '/manager',
+                },
+                {
+                  title: '净资产收益率',
+                  path: '/manager/list/two',
+                },
+                {
+                  title: '产品线指标概况',
+                  path: '/manager/list/three',
+                },
+                {
+                  title: '总资产净利率',
+                  path: '/manager/list/four',
+                },
+              ],
+            },
+          }}
+        ></Page>
       </div>
       <div className={styles.charts}>
         <div className={styles.chartsOne}>

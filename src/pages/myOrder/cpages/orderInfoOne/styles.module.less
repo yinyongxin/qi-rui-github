@@ -5,10 +5,56 @@
     background-color: #111111;
     height: 212px;
     padding: 0 24px;
-    .breadCrumb {
-      margin: 16px 0;
+    .desc {
+      display: flex;
+      align-items: center;
+      .left {
+        width: 62%;
+        line-height: 22px;
+        .de {
+          & span:first-child {
+            display: block;
+          }
+        }
+        .user {
+          margin-top: 16px;
+          span:first-child {
+            padding-right: 40px;
+          }
+        }
+      }
+      .right {
+        display: flex;
+        width: 38%;
+        padding-left: 100px;
+        dl {
+          text-align: center;
+          &:nth-child(1) {
+            padding-right: 70px;
+          }
+          &:nth-child(2) {
+            padding: 0 40px;
+          }
+          &:nth-child(3) {
+            padding-left: 45px;
+          }
+          &:nth-child(-n + 2) {
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+          }
+          dt {
+            font-size: var(--design-font-size-24);
+            color: var(--design-neutral-color-1);
+          }
+          dd {
+            margin: 0;
+            padding: 0;
+            margin-top: 8px;
+            color: var(--design-neutral-color-2);
+          }
+        }
+      }
     }
-    .title {
+    /* .title {
       font-size: var(--design-font-size-18);
       color: var(--design-base-color);
     }
@@ -56,7 +102,7 @@
           }
         }
       }
-    }
+    } */
   }
 
   // 主体区域
@@ -75,7 +121,6 @@
         }
       }
     }
-
     .orderReason {
       margin-top: -200px;
       margin-left: 500px;

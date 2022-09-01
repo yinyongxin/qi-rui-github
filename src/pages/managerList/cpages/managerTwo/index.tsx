@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useNavigate } from 'react-router-dom';
-import { Card } from 'qirui-digitization-ui';
+import { Card, Page } from 'qirui-digitization-ui';
 import { BarLineChart } from '@/components/PageCharts';
 import { barLineChartConfig } from './config';
 
@@ -23,23 +23,43 @@ const ZLManagerTwo = () => {
   const toThree = () => {
     navigate('/manager/list/three');
   };
+  const renderDescriptions = () => {
+    return (
+      <div className={styles.desc}>
+        <div className={styles.left}>
+          <span>指标描述：</span>
+          <span>
+            净资产收益率好于同期、但与目标比有差距；xxx部门净资产收益率最高且优于同期；国内净资产收益率高于国际且达成目标；新能源利润优于传统车，切大于同期净资产收益率；xxx产品线净资产收益率最高且达成目标，xxx产品线净资产收益率最低；
+          </span>
+        </div>
+        <div className={styles.right}>
+          <div className={styles.date}>日期选择</div>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className={styles.zlManagerTwoWrapper}>
       <div className={styles.header}>
-        <div className={styles.breadCrumb}>面包屑</div>
-        <div className={styles.title}>
-          <span>净资产收益率</span>
-        </div>
-        <div className={styles.type}>
-          <div className={styles.desc}>
-            <span>指标描述：</span>
-            <span>
-              净资产收益率好于同期、但与目标比有差距；xxx部门净资产收益率最高且优于同期；国内净资产收益率高于国际且达成目标；新能源利润优于传统车，切大于同期净资产收益率；xxx产品线净资产收益率最高且达成目标，xxx产品线净资产收益率最低；
-            </span>
-          </div>
-          <div className={styles.fen}>分类</div>
-        </div>
+        <Page
+          pageHeader={{
+            descriptions: renderDescriptions(),
+            title: '净资产收益率',
+            breadcrumb: {
+              list: [
+                {
+                  title: '首页',
+                  path: '/manager',
+                },
+                {
+                  title: '净资产收益率',
+                  path: '/manager/list/two',
+                },
+              ],
+            },
+          }}
+        ></Page>
         <div className={styles.charts}>
           <BarLineChart
             width="100%"
