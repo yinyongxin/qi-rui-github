@@ -24,6 +24,8 @@ const getRes = (a: any, b: any) => {
   } else {
     res = Object.assign(a, b);
   }
+
+
   return res;
 };
 
@@ -38,6 +40,7 @@ export const request =
             Authorization: tokenStorage,
           };
         }
+
         const requestRes = await instance({
           ...config,
           data: getRes(config?.data, data),
@@ -54,7 +57,6 @@ export const request =
           }
           return requestRes.data;
         }
-
         // 如果成功返回数据
         if (requestRes?.data.success) {
           return requestRes.data;
@@ -63,7 +65,7 @@ export const request =
           //   title: '请求失败',
           //   content: requestRes?.data?.msg || requestRes?.data?.message,
           // });
-          throw requestRes.data.msg;
+          throw requestRes.data.errorMessage;
         }
       } catch (error) {
         throw error;

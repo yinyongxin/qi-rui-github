@@ -32,8 +32,6 @@ const Login: FC = () => {
     localStorage.setItem('user', JSON.stringify(res.data.user))
     dispatch(userActions.updater(res.data.user))
     navigate('/home')
-
-
   }
   useEffect(() => {
     getCodeImage()

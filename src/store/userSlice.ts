@@ -1,23 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit'
+export interface interfaceInfo {
+  admin: boolean
+  avatar: string
+  createBy: null
+  createTime: null
+  delFlag: string
+  deptId: null
+  email: string
+  id: number
+  inductionTime: null | string
+  jobAge: null | string
+  jobNumber: null | string
+  phoneNumber: string
+  status: string
+  updateBy: number
+  updateTime: string
+  username: string
+};
 export interface UserInfoInterface {
-  info: {
-    admin: boolean
-    avatar: string
-    createBy: null
-    createTime: null
-    delFlag: string
-    deptId: null
-    email: string
-    id: number
-    inductionTime: null
-    jobAge: null
-    jobNumber: null
-    phoneNumber: string
-    status: string
-    updateBy: number
-    updateTime: string
-    username: string
-  } | null;
+  info: interfaceInfo
+
 }
 
 const initialState: UserInfoInterface = {
