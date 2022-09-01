@@ -1032,10 +1032,10 @@ prr@~1.0.1:
   resolved "https://registry.npmmirror.com/prr/-/prr-1.0.1.tgz#d3fc114ba06995a45ec6893f484ceb1d78f5f476"
   integrity sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==
 
-qirui-digitization-ui@^1.2.4:
-  version "1.2.4"
-  resolved "https://registry.npmmirror.com/qirui-digitization-ui/-/qirui-digitization-ui-1.2.4.tgz#8dce95bb066df6e14c07096d9fb922d7dbbbe9c8"
-  integrity sha512-plCbxtfe1FHpogNkoiCPGXA7jYMkpx+2/kU0cunPYFZ+0KyRciARa7+Ut0qUZeDvlVCFbQ3k2cqFm1oRZRED0Q==
+qirui-digitization-ui@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.npmmirror.com/qirui-digitization-ui/-/qirui-digitization-ui-1.2.5.tgz#d2a1edf0d1bb111dee72e674047b9c8303b94c1c"
+  integrity sha512-pxCWr8zTsYLVpWlvcvl1RLGYqd63NBSSq20zn9dgLpfTvodWDvMNBapuKM9nrfXgXi9KQizL1/f2hH9EoIUyyQ==
   dependencies:
     less "^4.1.3"
     react "^18.2.0"
