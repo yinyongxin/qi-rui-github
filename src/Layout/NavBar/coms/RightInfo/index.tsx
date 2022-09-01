@@ -1,7 +1,20 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import { ExempleComponentPropType, OrderNotificationType } from './types';
 import styles from './styles.module.less';
 import { useLocale } from '@/utils/hooks';
+import {
+  Modal,
+  Form,
+  Image,
+  Input,
+  Select,
+  Title,
+  Upload,
+  FormItem,
+  Message,
+} from 'qirui-digitization-ui';
+import { ModalHandle } from 'qirui-digitization-ui/dist/Modal/interface';
+
 const RightInfo: FC<ExempleComponentPropType> = () => {
   const [orderNotification, setOrderNotification] =
     useState<OrderNotificationType[]>();
@@ -84,9 +97,19 @@ const RightInfo: FC<ExempleComponentPropType> = () => {
     initData();
   }, []);
 
+  const ModalRef = useRef<ModalHandle>();
+
+  const handleOrder = () => {
+    ModalRef.current?.open();
+  };
+  const handleOk = () => {
+    ModalRef.current?.close();
+    Message.success('工单创建成功！');
+  };
+
   return (
     <div className={styles.rightInfo}>
-      <div className={styles.workOrder}>
+      <div className={styles.workOrder} onClick={handleOrder}>
         <div>{addSvg()}</div>
         <div className={styles.text}>
           {locale('componentsLocale.custom.work.order')}
@@ -104,8 +127,9 @@ const RightInfo: FC<ExempleComponentPropType> = () => {
                 return (
                   <div
                     key={index}
-                    className={`${styles.orderItem} ${index != 0 ? styles.orderItemBorder : ''
-                      }`}
+                    className={`${styles.orderItem} ${
+                      index != 0 ? styles.orderItemBorder : ''
+                    }`}
                   >
                     <div className={styles.title}>{item.title}</div>
                     <div className={styles.time}>{item.time}</div>
@@ -183,13 +207,125 @@ const RightInfo: FC<ExempleComponentPropType> = () => {
               </div>
               <div>{locale('information.account.security')}</div>
             </div>
-            <div className={styles.loginOut} onClick={() => {
-              console.log(1);
-
-            }}>{locale('global.loginOut')}</div>
+            <div
+              className={styles.loginOut}
+              onClick={() => {
+                console.log(1);
+              }}
+            >
+              {locale('global.loginOut')}
+            </div>
           </div>
         </div>
       </div>
+      <Modal
+        ref={ModalRef}
+        title="自定义工单"
+        mountOnEnter
+        cancelText="取消"
+        okText="派发工单"
+        onOK={handleOk}
+      >
+        <div className={styles.formBox}>
+          <Form>
+            <FormItem label="填写工单信息" name="username" layout="vertical">
+              <Input />
+            </FormItem>
+            <FormItem
+              label="上传故障图片(最多上传9张)"
+              name="age"
+              layout="vertical"
+            >
+              <div className={styles.uploadItem}>
+                <Upload>
+                  {(files) => (
+                    <Image
+                      imgAttributes={{
+                        style: {
+                          objectFit: 'cover',
+                        },
+                      }}
+                      height={90}
+                      src={files?.[0] ? URL.createObjectURL(files?.[0]) : ''}
+                      // defaultSrc={Luoxiaohei}
+                    />
+                  )}
+                </Upload>
+                <Upload>
+                  {(files) => (
+                    <Image
+                      imgAttributes={{
+                        style: {
+                          objectFit: 'cover',
+                        },
+                      }}
+                      height={90}
+                      src={files?.[0] ? URL.createObjectURL(files?.[0]) : ''}
+                      // defaultSrc={Luoxiaohei}
+                    />
+                  )}
+                </Upload>
+                <Upload>
+                  {(files) => (
+                    <Image
+                      imgAttributes={{
+                        style: {
+                          objectFit: 'cover',
+                        },
+                      }}
+                      height={90}
+                      src={files?.[0] ? URL.createObjectURL(files?.[0]) : ''}
+                      // defaultSrc={Luoxiaohei}
+                    />
+                  )}
+                </Upload>
+              </div>
+            </FormItem>
+            <FormItem label="故障描述" name="desc" layout="vertical">
+              <textarea
+                placeholder="请输入故障内容"
+                className={styles.textArea}
+              />
+            </FormItem>
+            <FormItem label="派发工单任务" name="desc" layout="vertical">
+              <Select
+                placeholder="请选择执行人员"
+                options={[
+                  {
+                    label: 'Label1',
+                    value: '1',
+                  },
+                  {
+                    label: 'Label2',
+                    value: '2',
+                  },
+                ]}
+                onValueChange={(newValue) => {
+                  console.log('newValue', newValue);
+                }}
+              />
+            </FormItem>
+            <FormItem label="完成工单期限" name="desc" layout="vertical">
+              <Select
+                placeholder="选择完成日期"
+                options={[
+                  {
+                    label: 'Label1',
+                    value: '1',
+                  },
+                  {
+                    label: 'Label2',
+                    value: '2',
+                  },
+                ]}
+                onValueChange={(newValue) => {
+                  console.log('newValue', newValue);
+                }}
+              />
+            </FormItem>
+          </Form>
+        </div>
+      </Modal>
     </div>
   );
 };

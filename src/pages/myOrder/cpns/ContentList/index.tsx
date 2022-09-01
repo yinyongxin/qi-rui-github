@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 
+import { useNavigate } from 'react-router-dom';
 import { Card } from 'qirui-digitization-ui';
 
 import styles from './styles.module.less';
@@ -11,14 +12,14 @@ const ZLContentList = () => {
       id: 1,
       title: 'hpv值超5%阈值',
       originator: '张长弓',
-      status: 2,
+      status: 1,
       dateTime: '2021-02-03 18:56:23',
     },
     {
       id: 2,
       title: 'hpv值超5%阈值',
       originator: '张长弓',
-      status: 2,
+      status: 1,
       dateTime: '2021-02-03 18:56:23',
     },
     {
@@ -32,11 +33,11 @@ const ZLContentList = () => {
       id: 4,
       title: 'hpv值超5%阈值',
       originator: '张长弓',
-      status: 2,
+      status: 3,
       dateTime: '2021-02-03 18:56:23',
     },
     {
-      id: 5,
+      id: 0,
       title: 'hpv值超5%阈值',
       originator: '张长弓',
       status: 2,
@@ -187,6 +188,7 @@ const ZLContentList = () => {
   // redux hooks
 
   // other hooks
+  const navigate = useNavigate();
 
   // handles
   const handleStatus = (status: number) => {
@@ -206,6 +208,9 @@ const ZLContentList = () => {
         return undefined;
     }
   };
+  const toInfo = () => {
+    navigate('info');
+  };
   const headerStyle = { color: 'var(--design-neutral-color-1)' };
   const bodyStyle = {
     color: 'var(--design-neutral-color-2)',
@@ -219,11 +224,10 @@ const ZLContentList = () => {
             <Card
               title={item.title}
               status={handleStatus(item.status)}
-              // width={312}
               headerStyle={headerStyle}
               bodyStyle={bodyStyle}
             >
-              <div className={styles.info}>
+              <div className={styles.info} onClick={toInfo}>
                 <div className={styles.infoTop}>
                   <span>D</span>
                   <span>制造HPV</span>
