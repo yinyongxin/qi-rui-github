@@ -75,7 +75,6 @@ const ZLManagerMarket = () => {
             <Fragment key={item.id}>
               <Card
                 title={<ZLCardHeader title="利润总额" price={3624} />}
-                width={251}
                 headerStyle={headerStyle}
                 bodyStyle={bodyStyle}
               >

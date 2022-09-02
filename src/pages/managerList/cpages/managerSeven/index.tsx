@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Card } from 'qirui-digitization-ui';
+import { Card, Page } from 'qirui-digitization-ui';
 
 import styles from './styles.module.less';
 
@@ -12,15 +12,57 @@ const ZLManagerSeven = () => {
     height: '48px',
     color: 'var(--design-neutral-color-1)',
   };
+  const renderTemplate = () => {
+    return (
+      <div className={styles.types}>
+        <h2 className={styles.title}>报表</h2>
+        <div className={styles.fen}>
+          <span>日期选择</span>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className={styles.zlManagerSevenWrapper}>
       <div className={styles.header}>
-        <div className={styles.breadCrumb}>面包屑</div>
-        <div className={styles.type}>
-          <span className={styles.title}>报表</span>
-          <div className={styles.fen}>分类</div>
-        </div>
+        <Page
+          pageHeader={{
+            descriptions: renderTemplate(),
+            breadcrumb: {
+              list: [
+                {
+                  title: '首页',
+                  path: '/manager',
+                },
+                {
+                  title: '净资产收益率',
+                  path: '/manager/list/two',
+                },
+                {
+                  title: '产品线指标概况',
+                  path: '/manager/list/three',
+                },
+                {
+                  title: '总资产净利率',
+                  path: '/manager/list/four',
+                },
+                {
+                  title: '主营业务净利润',
+                  path: '/manager/list/five',
+                },
+                {
+                  title: '成本总额',
+                  path: '/manager/list/six',
+                },
+                {
+                  title: '报表',
+                  path: '/manager/list/seven',
+                },
+              ],
+            },
+          }}
+        ></Page>
       </div>
       <div className={styles.charts}>
         <div className={styles.left}>

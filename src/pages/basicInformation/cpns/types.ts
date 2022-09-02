@@ -3,8 +3,16 @@ export type InfoStateType = {
   entryTime: string;
   jobTitle: string;
   JobNumber: string;
-  workingYears: number;
+  workingYears: string;
 };
 export type ModalType = {
   init: (title?: string) => void;
 };
+export type PhoneCodeType = {
+  code: string
+  uuid: string
+};
+export type changePropsType = {
+  image: string
+};
+

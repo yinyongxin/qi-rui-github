@@ -5,8 +5,6 @@
   width: 500px;
   // position: relative;
 
-
-
   .navImage {
     width: 32px;
     height: 32px;
@@ -38,7 +36,6 @@
         background: var(--design-neutral-color-9);
         border: 1px solid var(--design-neutral-color-5);
         box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.65);
-
 
         .front {
           width: 100%;
@@ -75,7 +72,6 @@
             line-height: 22px;
             color: var(--design-neutral-color-2);
             opacity: 0.8;
-
           }
 
           .job {
@@ -116,7 +112,6 @@
             line-height: 22px;
             color: var(--design-neutral-color-1);
           }
-
         }
 
         .accountSecurity {
@@ -131,7 +126,6 @@
             background: rgba(24, 254, 254, 0.1);
           }
 
-
           & div:nth-child(2) {
             margin-left: 16px;
             font-family: 'Noto Sans SC';
@@ -141,7 +135,6 @@
             line-height: 22px;
             color: var(--design-neutral-color-1);
           }
-
         }
 
         .loginOut {
@@ -161,8 +154,6 @@
       }
     }
   }
-
-
 
   .iconSvg {
     margin-right: 24px;
@@ -253,17 +244,10 @@
           line-height: 40px;
           text-align: center;
           color: var(--design-neutral-color-1);
-
         }
       }
     }
-
-
-
-
   }
-
-
 
   .workOrder {
     width: 106px;
@@ -284,15 +268,27 @@
       color: var(--design-base-color-6);
       padding-left: 6px;
       box-sizing: border-box;
-
+    }
+    &:hover {
+      cursor: pointer;
     }
   }
+}
 
-
-
-
-
-
-
-
+.formBox {
+  .uploadItem {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .textArea {
+    resize: none;
+    outline: none;
+    border: 0;
+    width: 100% !important;
+    height: 90px !important;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 12px;
+    color: #ffffff;
+  }
 }

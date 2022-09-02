@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Card } from 'qirui-digitization-ui';
+import { Card, Page } from 'qirui-digitization-ui';
 import {
   BarChart,
   BarLineChart,
@@ -34,11 +34,38 @@ const ZLOperatorItemCharts = () => {
   const bodyStyle = {
     padding: 0,
   };
+  const renderTemplate = () => {
+    return (
+      <div className={styles.types}>
+        <h2 className={styles.title}>利润总额</h2>
+        <div className={styles.fen}>
+          <span>日期选择</span>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className={styles.zlOperatorItemWrapper}>
       <div className={styles.head}>
-        <div className={styles.breadCrumb}>
+        <Page
+          pageHeader={{
+            descriptions: renderTemplate(),
+            breadcrumb: {
+              list: [
+                {
+                  title: '首页',
+                  path: '/operator',
+                },
+                {
+                  title: '利润总额',
+                  path: '/operator/item',
+                },
+              ],
+            },
+          }}
+        ></Page>
+        {/* <div className={styles.breadCrumb}>
           <span>面包屑</span>
         </div>
         <div className={styles.types}>
@@ -46,7 +73,7 @@ const ZLOperatorItemCharts = () => {
           <div className={styles.fen}>
             <span>分类</span>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className={styles.info}>
         <div className={styles.chartsOne}>

@@ -1,23 +1,24 @@
 .zlOperatorContentWrapper {
   box-sizing: border-box;
-  width: 1570px;
+  width: 81.77%;
   padding: 0 24px;
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 30px;
     .title {
       font-weight: normal;
+      margin: 0;
       font-size: var(--design-font-size-18);
-      color: var( --design-base-color);
+      color: var(--design-base-color);
     }
     .time {
-
     }
   }
   .list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 12px;
   }
 }

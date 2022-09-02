@@ -2,6 +2,8 @@ import Layout from '@/Layout';
 import Home from '@/pages/home';
 import ReduxExemple from '@/pages/reduxExemple';
 import ZLMyOrder from '@/pages/myOrder';
+import ZLOrderInfoOne from '@/pages/myOrder/cpages/orderInfoOne';
+import ZLTicketDetails from '@/pages/ticketDetails';
 import ZLCharts from '@/pages/charts';
 import ZLManagerHome from '@/pages/managerHome';
 import ZLManagerList from '@/pages/managerList';
@@ -37,6 +39,14 @@ export const routes: RouteObject[] = [
       {
         path: 'myOrder',
         element: <ZLMyOrder />,
+      },
+      {
+        path: 'myOrder/info',
+        element: <ZLOrderInfoOne />,
+      },
+      {
+        path: 'ticketDetails',
+        element: <ZLTicketDetails />,
       },
       {
         path: 'charts',

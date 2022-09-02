@@ -2,34 +2,31 @@
   // 主体区域
   .header {
     display: flow-root;
-    background-color: #111111;
-    height: 502px;
-    padding: 0 24px;
-    .breadCrumb {
-      margin: 16px 0;
-    }
-    .title {
-      font-size: var(--design-font-size-18);
-      color: var(--design-base-color);
-    }
-    .type {
+    .desc {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 12px;
-      .desc {
-        width: 1200px;
-        font-size: var(--design-font-size-14);
-        color: var(--design-neutral-color-2);
+      .left {
+        width: 62%;
         line-height: 22px;
-        & span:first-child {
+        span:first-child {
           display: block;
         }
+      }
+      .right {
+        display: flex;
+        flex-direction: column;
+        width: 38%;
+        .date {
+          align-self: flex-end;
+        }
+        // align-self: flex-end;
       }
     }
     .charts {
       height: 286px;
-      margin-top: 58px;
+      padding: 0 24px;
+      background-color: var(--design-neutral-color-8);
     }
   }
   // 关联区域
@@ -42,7 +39,7 @@
     }
     .aboutCharts {
       display: flex;
-      &>div {
+      & > div {
         width: 25%;
       }
     }

@@ -1,24 +1,23 @@
 .zlManagerThreeWrapper {
   .header {
     display: flow-root;
-    padding: 0 24px;
-    height: 103px;
-    background-color: #111111;
-    .breadCrumb {
-      margin: 16px 0;
-    }
-    .type {
+    .types {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       .title {
+        font-style: normal;
+        margin: 0;
+        padding: 0;
+        font-weight: 500;
         font-size: var(--design-font-size-18);
         color: var(--design-base-color);
       }
+      .fen {
+      }
     }
-    
   }
-  
+
   .charts {
     padding: 0 24px;
     .chartsOne {
@@ -32,10 +31,9 @@
       display: flex;
       height: 375px;
       margin-top: 32px;
-      &>div {
+      & > div {
         flex: 1;
       }
     }
   }
-  
 }

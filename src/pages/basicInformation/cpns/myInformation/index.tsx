@@ -1,5 +1,5 @@
 import ImageComponent from '@/components/ImageComponent';
-import { useLocale } from '@/utils/hooks';
+import { useAppDispatch, useAppSelector, useLocale } from '@/utils/hooks';
 import ChangeImageModal from './changeImageModal';
 import ChangeEmailPhone from './changeEmailPhone';
 import { useEffect, useRef, useState } from 'react';
@@ -11,19 +11,25 @@ const Info = () => {
   const emailPhoneRef = useRef<ModalType>();
   const [infoData, setInfoData] = useState<InfoStateType>();
   const [image, setImage] = useState<string>('');
+  const [phone, setPhone] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const dispatch = useAppDispatch();
+  const { info } = useAppSelector((state) => state.user);
   const getInfo = () => {
     setInfoData({
-      name: '鲁班',
-      entryTime: '2018.5.30',
+      name: info?.username,
+      entryTime: info?.inductionTime ?? "暂无",
       jobTitle: '制造长',
-      JobNumber: 'QR10924',
-      workingYears: 4,
+      JobNumber: info.jobNumber ?? "暂无",
+      workingYears: info.jobAge ?? "暂无",
     });
-    setImage('./images/info.png');
+    setImage(info.avatar);
+    setPhone(info.phoneNumber)
+    setEmail(info.email)
   };
   useEffect(() => {
     getInfo();
-  }, []);
+  }, [info]);
   // 头像弹框
   const changeImage = () => {
     ModalRef.current?.init();
@@ -66,7 +72,7 @@ const Info = () => {
       <div className={styles.email}>
         <div className={styles.left}>{locale(`information.email`)}</div>
         <div className={styles.right}>
-          <div className={styles.center}>luban2022@chery.com</div>
+          <div className={styles.center}>{email}</div>
           <div
             className={styles.change}
             onClick={() => {
@@ -80,7 +86,7 @@ const Info = () => {
       <div className={styles.phone}>
         <div className={styles.left}>{locale(`information.cell.phone`)}</div>
         <div className={styles.right}>
-          <div className={styles.center}>18852809286</div>
+          <div className={styles.center}>{phone}</div>
           <div
             className={styles.change}
             onClick={() => {
@@ -92,7 +98,7 @@ const Info = () => {
         </div>
       </div>
       <div>
-        <ChangeImageModal ref={ModalRef}></ChangeImageModal>
+        {image && <ChangeImageModal ref={ModalRef} image={image}></ChangeImageModal>}
       </div>
       <div>
         <ChangeEmailPhone ref={emailPhoneRef}></ChangeEmailPhone>

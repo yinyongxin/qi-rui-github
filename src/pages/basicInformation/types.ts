@@ -3,5 +3,5 @@ export type InfoStateType = {
   entryTime: string;
   jobTitle: string;
   JobNumber: string;
-  workingYears: number;
+  workingYears: string;
 };
