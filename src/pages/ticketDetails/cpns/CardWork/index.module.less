@@ -1,0 +1,207 @@
+.cardContent {
+  :global {
+    .design-card-body {
+      background-color: var(--design-neutral-color-10);
+    }
+  }
+
+  .cardTitle {
+    width: 302px;
+    height: 56px;
+    line-height: 56px;
+    font-family: 'Noto Sans SC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--design-base-color);
+
+  }
+
+  .cardSubstance {
+    width: 302px;
+    max-height: 194px;
+    padding-top: 8px;
+    box-sizing: border-box;
+
+    .cardSubstanceItem {
+      margin-bottom: 24px;
+      font-family: 'Noto Sans SC';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      color: var(--design-neutral-color-1);
+    }
+
+    .cardSubstanceBottom {
+      width: 100%;
+      height: 64px;
+      border-top: 1px solid var(--design-neutral-color-5);
+      display: flex;
+      align-items: center;
+      justify-content: right;
+
+      .buttonContent {
+        display: flex;
+        gap: 8px;
+
+        .buttonLeft {
+          width: 60px;
+          height: 32px;
+          line-height: 32px;
+          border: 1px solid var(--design-neutral-color-2);
+          text-align: center;
+          font-family: 'Noto Sans SC';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          color: var(--design-neutral-color-2);
+
+        }
+
+        .buttonRight {
+          width: 88px;
+          height: 32px;
+          line-height: 32px;
+          border: 1px solid var(--design-base-color);
+          text-align: center;
+          font-family: 'Noto Sans SC';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          color: var(--design-base-color);
+        }
+      }
+    }
+
+
+  }
+
+
+}
+
+.RecommendedContent {
+  display: flex;
+  justify-content: space-between;
+
+  .Recommended {
+    font-family: 'Noto Sans SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--design-neutral-color);
+
+  }
+}
+
+.drawerList {
+  flex-direction: column;
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+// 列表渲染
+.cardOrder {
+  width: 100%;
+  height: 174px;
+
+  border: 1px solid var(--design-neutral-color-5);
+  display: flex;
+
+  .cardLeft {
+    width: 492px;
+    height: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+
+    .cardTitle {
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      border-bottom: 1px solid var(--design-neutral-color-5);
+      font-family: 'Noto Sans SC';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 50px;
+      color: var(--design-neutral-color-2);
+      display: flex;
+
+      & div:nth-child(2) {
+
+        font-weight: 500;
+        color: var(--design-neutral-color)
+      }
+
+
+    }
+
+    .cardDetail {
+      padding-top: 14px;
+      font-family: 'Noto Sans SC';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      color: var(--design-neutral-color-2);
+      box-sizing: border-box;
+    }
+
+    .cardFault {
+      padding-top: 34px;
+      font-family: 'Noto Sans SC';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      color: var(--design-neutral-color-3);
+      box-sizing: border-box;
+
+
+    }
+
+    .cardTime {
+      font-family: 'Noto Sans SC';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      padding-top: 4px;
+      color: var(--design-neutral-color-3);
+      box-sizing: border-box;
+    }
+  }
+
+  .cardRight {
+    width: 132px;
+    height: 100%;
+    border-left: 1px solid var(--design-neutral-color-5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .proportion {
+      font-family: 'Orbitron';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 32px;
+      color: var(--design-neutral-color-1);
+
+    }
+
+    .reason {
+      font-family: 'Noto Sans SC';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+      color: var(--design-neutral-color-3);
+    }
+  }
+
+}

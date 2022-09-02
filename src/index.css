@@ -9,68 +9,68 @@
     background-color: var(--design-neutral-color-9);
   }
 }
-
-
+.design-drawer {
+  top: 80px !important;
+}
 
 :root {
-  --design-charts-type1-color: #5A3FFF;
-  --design-charts-type1-color-1: #4832CC;
+  --design-charts-type1-color: #5a3fff;
+  --design-charts-type1-color-1: #4832cc;
   --design-charts-type1-color-2: #362699;
   --design-charts-type1-color-3: #241966;
-  --design-charts-type1-color-4: #120D33;
+  --design-charts-type1-color-4: #120d33;
 
-  --design-charts-type2-color: #268AFF;
-  --design-charts-type2-color-1: #1F6ECC;
+  --design-charts-type2-color: #268aff;
+  --design-charts-type2-color-1: #1f6ecc;
   --design-charts-type2-color-2: #175399;
-  --design-charts-type2-color-3: #0F3766;
-  --design-charts-type2-color-4: #081C33;
+  --design-charts-type2-color-3: #0f3766;
+  --design-charts-type2-color-4: #081c33;
 
-  --design-charts-type3-color: #18FEFE;
-  --design-charts-type3-color-1: #09D2D9;
-  --design-charts-type3-color-2: #00A7B3;
-  --design-charts-type3-color-3: #007E8C;
+  --design-charts-type3-color: #18fefe;
+  --design-charts-type3-color-1: #09d2d9;
+  --design-charts-type3-color-2: #00a7b3;
+  --design-charts-type3-color-3: #007e8c;
   --design-charts-type3-color-4: #005866;
-  
-  --design-charts-type4-color: #3DFFDC;
-  --design-charts-type4-color-1: #30CCB0;
+
+  --design-charts-type4-color: #3dffdc;
+  --design-charts-type4-color-1: #30ccb0;
   --design-charts-type4-color-2: #249984;
   --design-charts-type4-color-3: #186658;
-  --design-charts-type4-color-4: #0C332C;
+  --design-charts-type4-color-4: #0c332c;
 
-  --design-charts-type5-color: #06F7A1;
-  --design-charts-type5-color-1: #00D18F;
-  --design-charts-type5-color-2: #00AB7A;
+  --design-charts-type5-color: #06f7a1;
+  --design-charts-type5-color-1: #00d18f;
+  --design-charts-type5-color-2: #00ab7a;
   --design-charts-type5-color-3: #008563;
-  --design-charts-type5-color-4: #005E4A;
-  
-  --design-charts-type6-color: #ADE1FF;
-  --design-charts-type6-color-1: #8BB4CC;
-  --design-charts-type6-color-2: #688799;
-  --design-charts-type6-color-3: #455A66;
-  --design-charts-type6-color-4: #232D33;
-  
-  --design-charts-type7-color: #FBE947;
-  --design-charts-type7-color-1: #D4BE31;
-  --design-charts-type7-color-2: #AD961F;
-  --design-charts-type7-color-3: #877012;
-  --design-charts-type7-color-4: #614D0C;
-  
-  --design-charts-type8-color: #FF9900;
-  --design-charts-type8-color-1: #D97B00;
-  --design-charts-type8-color-2: #B35F00;
-  --design-charts-type8-color-3: #8C4600;
-  --design-charts-type8-color-4: #663000;
-  
-  --design-charts-type9-color: #FF483D;
-  --design-charts-type9-color-1: #D92C29;
-  --design-charts-type9-color-2: #B3191C;
-  --design-charts-type9-color-3: #8C0D13;
-  --design-charts-type9-color-4: #660810;
-  
-  --design-charts-type10-color: #EF7BE3;
-  --design-charts-type10-color-1: #C95DC2;
-  --design-charts-type10-color-2: #A343A0;
-  --design-charts-type10-color-3: #7D2D7D;
-  --design-charts-type10-color-4: #551E57;
+  --design-charts-type5-color-4: #005e4a;
 
+  --design-charts-type6-color: #ade1ff;
+  --design-charts-type6-color-1: #8bb4cc;
+  --design-charts-type6-color-2: #688799;
+  --design-charts-type6-color-3: #455a66;
+  --design-charts-type6-color-4: #232d33;
+
+  --design-charts-type7-color: #fbe947;
+  --design-charts-type7-color-1: #d4be31;
+  --design-charts-type7-color-2: #ad961f;
+  --design-charts-type7-color-3: #877012;
+  --design-charts-type7-color-4: #614d0c;
+
+  --design-charts-type8-color: #ff9900;
+  --design-charts-type8-color-1: #d97b00;
+  --design-charts-type8-color-2: #b35f00;
+  --design-charts-type8-color-3: #8c4600;
+  --design-charts-type8-color-4: #663000;
+
+  --design-charts-type9-color: #ff483d;
+  --design-charts-type9-color-1: #d92c29;
+  --design-charts-type9-color-2: #b3191c;
+  --design-charts-type9-color-3: #8c0d13;
+  --design-charts-type9-color-4: #660810;
+
+  --design-charts-type10-color: #ef7be3;
+  --design-charts-type10-color-1: #c95dc2;
+  --design-charts-type10-color-2: #a343a0;
+  --design-charts-type10-color-3: #7d2d7d;
+  --design-charts-type10-color-4: #551e57;
 }

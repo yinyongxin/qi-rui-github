@@ -1,0 +1,201 @@
+.RecommendedContent {
+  display: flex;
+  justify-content: space-between;
+
+  .Recommended {
+    font-family: 'Noto Sans SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--design-neutral-color);
+
+  }
+}
+
+.drawerList {
+  flex-direction: column;
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+// 列表渲染
+.cardOrder {
+  width: 100%;
+  height: 174px;
+
+  border: 1px solid var(--design-neutral-color-5);
+  display: flex;
+
+  .cardLeft {
+    width: 492px;
+    height: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+
+    .cardTitle {
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      border-bottom: 1px solid var(--design-neutral-color-5);
+      font-family: 'Noto Sans SC';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 50px;
+      color: var(--design-neutral-color-2);
+      display: flex;
+
+      & div:nth-child(2) {
+
+        font-weight: 500;
+        color: var(--design-neutral-color)
+      }
+
+
+    }
+
+    .cardDetail {
+      padding-top: 14px;
+      font-family: 'Noto Sans SC';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      color: var(--design-neutral-color-2);
+      box-sizing: border-box;
+    }
+
+    .cardFault {
+      padding-top: 34px;
+      font-family: 'Noto Sans SC';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      color: var(--design-neutral-color-3);
+      box-sizing: border-box;
+
+
+    }
+
+    .cardTime {
+      font-family: 'Noto Sans SC';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      padding-top: 4px;
+      color: var(--design-neutral-color-3);
+      box-sizing: border-box;
+    }
+  }
+
+  .cardRight {
+    width: 132px;
+    height: 100%;
+    border-left: 1px solid var(--design-neutral-color-5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .proportion {
+      font-family: 'Orbitron';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 32px;
+      color: var(--design-neutral-color-1);
+
+    }
+
+    .reason {
+      font-family: 'Noto Sans SC';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+      color: var(--design-neutral-color-3);
+    }
+  }
+
+}
+
+.customPlan {
+  margin-top: 24px;
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--design-neutral-color);
+}
+
+.input {
+  width: 100%;
+  height: 156px;
+  margin-top: 15px;
+
+  :global {
+    textarea {
+      width: 100%;
+      height: 156px;
+      background-color: rgba(255, 255, 255, 0.04);
+      text-align: left;
+    }
+
+    textarea::-webkit-input-placeholder {
+      font-family: 'Noto Sans SC';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      color: rgba(255, 255, 255, 0.4);
+      padding: 12px 16px;
+    }
+  }
+
+}
+
+.foot {
+  width: 640px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .distribute {
+    // width: 88px;
+    padding: 0 16px;
+    height: 40px;
+    border: 1px solid #18FEF0;
+    font-family: 'Noto Sans SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 40px;
+    color: #18FEF0;
+    text-align: center;
+  }
+
+  .distributePass {
+    color: var(--design-neutral-color-2);
+    border: 1px solid var(--design-neutral-color-2);
+  }
+
+  .cancel {
+    width: 60px;
+    height: 40px;
+    border: 1px solid var(--design-neutral-color-3);
+    font-family: 'Noto Sans SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 40px;
+    color: var(--design-neutral-color-3);
+    text-align: center;
+  }
+}

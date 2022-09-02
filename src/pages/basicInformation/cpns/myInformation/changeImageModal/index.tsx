@@ -19,6 +19,8 @@ import { userActions } from '@/store/userSlice';
 import FormComp from 'qirui-digitization-ui/dist/Form';
 
 const ModalComment: ForwardRefRenderFunction<unknown, changePropsType> = (props, ref) => {
+
+
   const locale = useLocale();
   const dispatch = useAppDispatch();
   const ModalRef = useRef<ModalHandle>();
