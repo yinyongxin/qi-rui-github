@@ -1,10 +1,13 @@
 export type CardOrderPropType = {
-  orderInfo: {
-    title: string,
-    detail: string,
-    fault: string,
-    time: string,
-    proportion: string,
-    reason: string
+  data: {
+    orderInfo: {
+      title: string,
+      detail: string,
+      fault: string,
+      time: string,
+      proportion: string,
+      reason: string
+    }
   }
+
 };

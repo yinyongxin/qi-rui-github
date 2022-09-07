@@ -24,5 +24,5 @@ export type ModalPropsType = {
   onchangeOpen: () => void
 };
 export type CardWorkPropsType = {
-  handleOrder: () => void
+  data: { handleOrder: () => void }
 };

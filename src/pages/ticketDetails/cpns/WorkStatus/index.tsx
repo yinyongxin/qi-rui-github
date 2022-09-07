@@ -5,9 +5,10 @@ import { Card } from 'qirui-digitization-ui';
 import { orderContext } from '../..';
 import { getOrderStatus } from '@/utils/tools/orderStatus';
 type WorkStatusPropsType = {
-  orderStatusChange: () => void
+  data: { orderStatusChange: () => void }
 };
-const WorkStatus: FC<WorkStatusPropsType> = ({ orderStatusChange }) => {
+import { Handle, Position } from "react-flow-renderer";
+const WorkStatus: FC<WorkStatusPropsType> = ({ data }) => {
   const contextValue = useContext(orderContext)
   const getOrderStatusFun = getOrderStatus(contextValue.role, contextValue.orderStatus)
   const cardTitle = () => {
@@ -29,7 +30,7 @@ const WorkStatus: FC<WorkStatusPropsType> = ({ orderStatusChange }) => {
     }
   }
   const planView = () => {
-    orderStatusChange()
+    data.orderStatusChange()
   }
   const contentText = () => {
     switch (getOrderStatusFun) {
@@ -103,6 +104,11 @@ const WorkStatus: FC<WorkStatusPropsType> = ({ orderStatusChange }) => {
           {footButton()}
         </div>
       </div>
+      <Handle
+        type="target"
+        position={Position.Left}
+        style={{ top: 140, background: "#18FEFE", width: '12px', height: '12px', borderRadius: '0px', left: '-13px' }}
+      />
     </Card>
   );
 };
