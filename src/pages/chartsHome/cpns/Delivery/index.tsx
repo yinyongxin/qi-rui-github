@@ -74,7 +74,6 @@ const ZLChartsDelivery = () => {
             <div key={item.title} onClick={handleClick}>
               <Card
                 title={item.title}
-                width={377}
                 headerStyle={headerStyle}
                 bodyStyle={bodyStyle}
               >

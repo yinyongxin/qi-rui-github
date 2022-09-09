@@ -72,7 +72,6 @@ const ZLChartsFinance = () => {
       <div className={styles.content}>
         <Card
           title="人员流失率"
-          width={754}
           headerStyle={headerStyle}
           bodyStyle={bodyStyle}
         >

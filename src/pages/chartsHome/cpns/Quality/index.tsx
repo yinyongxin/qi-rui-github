@@ -70,12 +70,7 @@ const ZLChartsQuality = () => {
     <div className={styles.zlQualityWrapper}>
       <Title title="QUALITY" type="tooltip"></Title>
       <div className={styles.content}>
-        <Card
-          title="整车ADUIT"
-          width={754}
-          headerStyle={headerStyle}
-          bodyStyle={bodyStyle}
-        >
+        <Card title="整车ADUIT" headerStyle={headerStyle} bodyStyle={bodyStyle}>
           <div className={styles.info}>
             <div className={styles.infoTitle}>
               <span className={styles.actual}>528</span>

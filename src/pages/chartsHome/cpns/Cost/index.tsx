@@ -97,7 +97,6 @@ const ZLChartsCost = () => {
             <Fragment key={item.title}>
               <Card
                 title={item.title}
-                width={377}
                 headerStyle={headerStyle}
                 bodyStyle={bodyStyle}
               >

@@ -34,14 +34,18 @@ const ZLManagerContent = () => {
             type="text"
           />
         </div>
-        <div className={styles.time}>分类</div>
+        <div className={styles.time}>日期选择</div>
       </div>
       <div className={styles.list}>
-        <ZLChartsQuality />
-        <ZLChartsCost />
-        <ZLChartsDelivery />
-        <ZLChartsFinance />
-        <ZLManagement />
+        <div className={styles.left}>
+          <ZLChartsQuality />
+          <ZLChartsDelivery />
+          <ZLChartsFinance />
+        </div>
+        <div className={styles.right}>
+          <ZLChartsCost />
+          <ZLManagement />
+        </div>
       </div>
     </div>
   );

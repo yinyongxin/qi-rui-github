@@ -72,7 +72,6 @@ const ZLChartsManagement = () => {
       <div className={styles.content}>
         <Card
           title="生产材料周转天数"
-          width={754}
           headerStyle={headerStyle}
           bodyStyle={bodyStyle}
         >

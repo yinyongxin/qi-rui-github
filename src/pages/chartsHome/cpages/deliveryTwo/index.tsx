@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import { Card } from 'qirui-digitization-ui';
+import { Card, Breadcrumb } from 'qirui-digitization-ui';
 import { useNavigate } from 'react-router-dom';
 import { BarLineChart } from '@/components/PageCharts';
 
@@ -65,7 +65,20 @@ const ZLDeliveryTwo = () => {
 
   return (
     <div className={styles.zlDeliveryTwoWrapper}>
-      <div className={styles.breadCrumb}>面包屑</div>
+      <div className={styles.breadCrumb}>
+        <Breadcrumb
+          list={[
+            {
+              title: '透明指标',
+              path: '/chartsHome',
+            },
+            {
+              title: '二级指标',
+              path: '/delivery/two',
+            },
+          ]}
+        />
+      </div>
       <div className={styles.type}>
         <h2 className={styles.titles}>制造HPV</h2>
         <div className={styles.tp}>分类</div>
@@ -76,7 +89,6 @@ const ZLDeliveryTwo = () => {
             <div key={item.title} onClick={handleClick}>
               <Card
                 title={item.title}
-                width={624}
                 headerStyle={headerStyle}
                 bodyStyle={bodyStyle}
               >

@@ -1,12 +1,8 @@
 .zlDeliveryThreeWrapper {
-
   .main {
     height: 430px;
     padding: 24px;
     background-color: var(--design-neutral-color-5);
-    .breadCrumb {
-
-    }
     .type {
       display: flex;
       justify-content: space-between;
@@ -19,12 +15,6 @@
         color: var(--design-base-color);
         margin: 0;
       }
-      .tp {
-
-      }
-    }
-    .chartsBox {
-
     }
   }
   .about {
@@ -35,10 +25,11 @@
       color: var(--design-base-color);
       margin: 0;
       margin-top: 16px;
+      margin-bottom: 24px;
     }
     .aboutCharts {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }

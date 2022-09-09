@@ -1,8 +1,5 @@
 .zlDeliveryTwoWrapper {
   padding: 24px;
-  .breadCrumb {
-
-  }
   .type {
     display: flex;
     justify-content: space-between;
@@ -14,12 +11,9 @@
       font-size: var(--design-font-size-24);
       color: var(--design-base-color);
     }
-    .tp {
-      
-    }
   }
   .twoCharts {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }

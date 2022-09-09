@@ -57,7 +57,7 @@ const ZLChartsList = () => {
     <div className={styles.zlChartsListWrapper}>
       <div className={styles.header}>
         <h2 className={styles.title}>待处理工单</h2>
-        <div className={styles.time}>分类</div>
+        <div className={styles.time}>指标类别</div>
       </div>
       <div className={styles.list}>
         {state.map((item, index) => {
