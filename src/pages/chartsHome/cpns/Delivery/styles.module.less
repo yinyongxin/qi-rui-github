@@ -1,28 +1,26 @@
 .zlDeliveryWrapper {
   .content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    & > div {
+      width: 50%;
+    }
     margin-top: 20px;
     .info {
       list-style: none;
       padding: 0;
       margin: 0;
-      li {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 16px;
-        &:last-of-type {
-          margin-bottom: 0;
+      .infoTitle {
+        .actual {
+          display: block;
+          font-size: var(--design-font-size-24);
         }
-        .colorGreen {
-          color: var(--design-success-color);
+        .target {
+          display: block;
+          color: var(--design-neutral-color-3);
+          font-size: var(--design-font-size-14);
+          margin-top: 10px;
         }
-        .colorRed {
-          color: var(--design-error-color);
-        }
-      }
-      .infoCharts {
-        width: 100%;
       }
     }
   }

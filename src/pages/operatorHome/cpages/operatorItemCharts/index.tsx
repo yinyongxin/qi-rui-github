@@ -106,7 +106,7 @@ const ZLOperatorItemCharts = () => {
               <div className={styles.in}>
                 <LineChart
                   width="100%"
-                  height="327px"
+                  height="336px"
                   data={[
                     [2.0, 1.5, 2.0, 2.5],
                     [1.0, 2.0, 1.2, 1.5],
@@ -127,7 +127,7 @@ const ZLOperatorItemCharts = () => {
               <div className={styles.in}>
                 <PieChart
                   width="100%"
-                  height="322px"
+                  height="336px"
                   data={[
                     { value: 1048, name: '模块一' },
                     { value: 735, name: '模块二' },
