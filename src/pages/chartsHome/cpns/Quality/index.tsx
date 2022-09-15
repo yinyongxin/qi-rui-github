@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 import { Card, Title } from 'qirui-digitization-ui';
 import { BarLineChart } from '@/components/PageCharts';
+import { barLineChartConfig } from './config';
 
 import styles from './styles.module.less';
-import { barLineChartConfig } from './config';
 
 const ZLChartsQuality = () => {
   // state & props

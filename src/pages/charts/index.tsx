@@ -21,6 +21,7 @@ import {
   barLineChart2Config,
 } from './config';
 import { IRefInterface } from '@/components/PageCharts/types';
+import { BASE_URL } from '@/config';
 
 import styles from './styles.module.less';
 
@@ -88,6 +89,17 @@ const ZLCharts: React.FC = () => {
 
   return (
     <div className={styles.charts}>
+      <iframe
+        className={styles.qirui}
+        width="100%"
+        height="336px"
+        scrolling="no"
+        frameBorder={0}
+        src={
+          BASE_URL +
+          '/webroot/decision/view/form?viewlet=qirui%252Fbar%252Fbar1.frm'
+        }
+      ></iframe>
       <BarChart
         width="40%"
         height="336px"
