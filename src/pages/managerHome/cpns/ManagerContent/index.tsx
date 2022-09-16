@@ -12,10 +12,10 @@ const ZLManagerContent = () => {
   const isMobile = useMobile()
   return (
     <div className={styles.zlManagerContentWrapper}>
-      <div className={styles.header}>
+      {!isMobile && <div className={styles.header}>
         <h2 className={styles.title}>经营体决策</h2>
         <div className={styles.time}>分类</div>
-      </div>
+      </div>}
       <div className={isMobile ? styles.listMobile : styles.list}>
         <ZLManagerFinance />
         <ZLManagerMarket />
