@@ -14,6 +14,7 @@ import './index.css';
 import 'qirui-digitization-ui/style';
 import 'qirui-digitization-ui/icons/css';
 import 'qirui-digitization-ui/theme';
+import 'qirui-digitization-ui/theme/dark';
 import { appLocalStorage, changeTheme } from './utils/tools';
 
 const appInit = () => {
@@ -47,9 +48,9 @@ const Main = () => {
 };
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Main />
-    </BrowserRouter>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <BrowserRouter>
+    <Main />
+  </BrowserRouter>
+  // </React.StrictMode>
 );

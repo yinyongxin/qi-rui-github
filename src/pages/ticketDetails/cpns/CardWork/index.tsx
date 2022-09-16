@@ -62,7 +62,7 @@ const CardWork: FC<CardWorkPropsType> = ({ data }) => {
       type="source"
       position={Position.Right}
       id="d"
-      style={{ top: 40, background: "#18FEFE", width: '12px', height: '12px', borderRadius: '0px', right: '-12px', visibility: contextValue.orderStatus === 1 ? 'hidden' : 'visible' }}
+      style={{ top: 30, background: "#18FEFE", width: '12px', height: '12px', borderRadius: '0px', right: '-12px', visibility: contextValue.orderStatus === 1 ? 'hidden' : 'visible' }}
     // isConnectable={isConnectable}
     />
   </div>

@@ -20,12 +20,12 @@ const Info = () => {
       name: info?.username,
       entryTime: info?.inductionTime ?? "暂无",
       jobTitle: '制造长',
-      JobNumber: info.jobNumber ?? "暂无",
-      workingYears: info.jobAge ?? "暂无",
+      JobNumber: info?.jobNumber ?? "暂无",
+      workingYears: info?.jobAge ?? "暂无",
     });
-    setImage(info.avatar);
-    setPhone(info.phoneNumber)
-    setEmail(info.email)
+    setImage(info?.avatar);
+    setPhone(info?.phoneNumber)
+    setEmail(info?.email)
   };
   useEffect(() => {
     getInfo();
@@ -39,7 +39,7 @@ const Info = () => {
   };
   return (
     <div className={styles.basicInformation}>
-      <div className={styles.breadcrumbs}>账号中心 / 基本资料</div>
+      <div className={styles.breadcrumbs}>{locale('information.account.center')} / {locale('information.basic.information')}</div>
       <div className={styles.info}>
         <div className={styles.avatar}>
           <ImageComponent src={image}></ImageComponent>
