@@ -15,21 +15,20 @@
       font-size: var(--design-font-size-18);
       color: var(--design-base-color);
     }
+  }
+  .list {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    .left {
+      margin-right: 6px;
+    }
+    .right {
+      margin-left: 6px;
+    }
 
-    .list {
+    .listMobile {
       display: grid;
-      grid-template-columns: repeat(2, 50%);
-      .left {
-        margin-right: 6px;
-      }
-      .right {
-        margin-left: 6px;
-      }
-
-      .listMobile {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-      }
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 }
