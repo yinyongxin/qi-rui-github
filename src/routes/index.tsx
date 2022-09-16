@@ -55,6 +55,8 @@ export const routes: RouteObject[] = [
       {
         path: 'manager',
         element: <ZLManagerHome />,
+
+
       },
       {
         path: 'manager/list',

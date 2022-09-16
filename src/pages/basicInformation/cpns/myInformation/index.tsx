@@ -20,12 +20,12 @@ const Info = () => {
       name: info?.username,
       entryTime: info?.inductionTime ?? "暂无",
       jobTitle: '制造长',
-      JobNumber: info.jobNumber ?? "暂无",
-      workingYears: info.jobAge ?? "暂无",
+      JobNumber: info?.jobNumber ?? "暂无",
+      workingYears: info?.jobAge ?? "暂无",
     });
-    setImage(info.avatar);
-    setPhone(info.phoneNumber)
-    setEmail(info.email)
+    setImage(info?.avatar);
+    setPhone(info?.phoneNumber)
+    setEmail(info?.email)
   };
   useEffect(() => {
     getInfo();
