@@ -37,79 +37,35 @@ const ZLManagerThree = () => {
 
   return (
     <div className={styles.zlManagerThreeWrapper}>
-      <div className={styles.header}>
-        <Page
-          pageHeader={{
-            descriptions: renderTemplate(),
-            breadcrumb: {
-              list: [
-                {
-                  title: '首页',
-                  path: '/manager',
-                },
-                {
-                  title: '净资产收益率',
-                  path: '/manager/list/two',
-                },
-                {
-                  title: '产品线指标概况',
-                  path: '/manager/list/three',
-                },
-              ],
-            },
-          }}
-        ></Page>
-      </div>
-      <div className={styles.charts}>
-        <div className={styles.chartsOne}>
-          <Card
-            title="净资产收益率"
-            headerStyle={headerStyle}
-            bodyStyle={bodyStyle}
-          >
-            <div className={styles.in} onClick={toFour}>
-              <LineChart
-                width="100%"
-                height="327px"
-                data={[
-                  [2.0, 1.5, 2.0, 2.5],
-                  [1.0, 2.0, 1.2, 1.5],
-                  [1.2, 1.4, 1.6, 1.8],
-                ]}
-                config={lineChartConfig}
-              />
-            </div>
-          </Card>
-        </div>
-        <div className={styles.chartsTwo}>
-          <Card
-            title="净资产收益率拆分"
-            headerStyle={headerStyle}
-            bodyStyle={bodyStyle}
-          >
-            <div className={styles.in}>
-              <BarChart
-                width="100%"
-                height="327px"
-                data={[
-                  [18, 12, 10, 15],
-                  [28, 15, 20, 30],
-                  [34, 18, 25, 32],
-                  [40, 25, 30, 38],
-                ]}
-                config={barChartConfig}
-              />
-            </div>
-          </Card>
-        </div>
-        <div className={styles.chartsThree}>
-          <div className={styles.left}>
+      <Page
+        pageHeader={{
+          descriptions: renderTemplate(),
+          breadcrumb: {
+            list: [
+              {
+                title: '首页',
+                path: '/manager',
+              },
+              {
+                title: '净资产收益率',
+                path: '/manager/list/two',
+              },
+              {
+                title: '产品线指标概况',
+                path: '/manager/list/three',
+              },
+            ],
+          },
+        }}
+      >
+        <div className={styles.charts}>
+          <div className={styles.chartsOne}>
             <Card
-              title="总净资产收益率"
+              title="净资产收益率"
               headerStyle={headerStyle}
               bodyStyle={bodyStyle}
             >
-              <div className={styles.in}>
+              <div className={styles.in} onClick={toFour}>
                 <LineChart
                   width="100%"
                   height="327px"
@@ -123,28 +79,71 @@ const ZLManagerThree = () => {
               </div>
             </Card>
           </div>
-          <div className={styles.right}>
+          <div className={styles.chartsTwo}>
             <Card
-              title="权益乘数"
+              title="净资产收益率拆分"
               headerStyle={headerStyle}
               bodyStyle={bodyStyle}
             >
               <div className={styles.in}>
-                <LineChart
+                <BarChart
                   width="100%"
                   height="327px"
                   data={[
-                    [2.0, 1.5, 2.0, 2.5],
-                    [1.0, 2.0, 1.2, 1.5],
-                    [1.2, 1.4, 1.6, 1.8],
+                    [18, 12, 10, 15],
+                    [28, 15, 20, 30],
+                    [34, 18, 25, 32],
+                    [40, 25, 30, 38],
                   ]}
-                  config={lineChartConfig}
+                  config={barChartConfig}
                 />
               </div>
             </Card>
           </div>
+          <div className={styles.chartsThree}>
+            <div className={styles.left}>
+              <Card
+                title="总净资产收益率"
+                headerStyle={headerStyle}
+                bodyStyle={bodyStyle}
+              >
+                <div className={styles.in}>
+                  <LineChart
+                    width="100%"
+                    height="327px"
+                    data={[
+                      [2.0, 1.5, 2.0, 2.5],
+                      [1.0, 2.0, 1.2, 1.5],
+                      [1.2, 1.4, 1.6, 1.8],
+                    ]}
+                    config={lineChartConfig}
+                  />
+                </div>
+              </Card>
+            </div>
+            <div className={styles.right}>
+              <Card
+                title="权益乘数"
+                headerStyle={headerStyle}
+                bodyStyle={bodyStyle}
+              >
+                <div className={styles.in}>
+                  <LineChart
+                    width="100%"
+                    height="327px"
+                    data={[
+                      [2.0, 1.5, 2.0, 2.5],
+                      [1.0, 2.0, 1.2, 1.5],
+                      [1.2, 1.4, 1.6, 1.8],
+                    ]}
+                    config={lineChartConfig}
+                  />
+                </div>
+              </Card>
+            </div>
+          </div>
         </div>
-      </div>
+      </Page>
     </div>
   );
 };

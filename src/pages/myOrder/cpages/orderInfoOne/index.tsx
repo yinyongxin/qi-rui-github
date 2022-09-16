@@ -72,71 +72,70 @@ const ZLOrderInfoOne = () => {
 
   return (
     <div className={styles.zlOrderInfoOneWrapper}>
-      <div className={styles.header}>
-        <Page
-          pageHeader={{
-            title: '左前门槛返修痕',
-            descriptions: renderDescriptions(),
-            breadcrumb: {
-              list: [
-                {
-                  title: '我的工单',
-                  path: '/myOrder',
-                },
-                {
-                  title: '工单详情',
-                  path: '/myOrder/info',
-                },
-              ],
-            },
-          }}
-        ></Page>
-      </div>
-      <div className={styles.orderInfo}>
-        <div className={styles.order}>
-          <Card
-            title="车间流水技术问题"
-            width={312}
-            headerStyle={headerStyle}
-            bodyStyle={bodyStyle}
-            footerStyle={footerStyle}
-            footer={renderFooter()}
-          >
-            <div className={styles.info}>
-              <div className={styles.item}>
-                <Image src={Luoxiaohei} preview />
+      <Page
+        pageHeader={{
+          title: '左前门槛返修痕',
+          descriptions: renderDescriptions(),
+          breadcrumb: {
+            list: [
+              {
+                title: '我的工单',
+                path: '/myOrder',
+              },
+              {
+                title: '工单详情',
+                path: '/myOrder/info',
+              },
+            ],
+          },
+        }}
+      >
+        <div className={styles.orderInfo}>
+          <div className={styles.order}>
+            <Card
+              title="车间流水技术问题"
+              width={312}
+              headerStyle={headerStyle}
+              bodyStyle={bodyStyle}
+              footerStyle={footerStyle}
+              footer={renderFooter()}
+            >
+              <div className={styles.info}>
+                <div className={styles.item}>
+                  <Image src={Luoxiaohei} preview />
+                </div>
+                <div className={styles.item}>
+                  <Image src={Luoxiaohei} preview />
+                </div>
+                <div className={styles.item}>
+                  <Image src={Luoxiaohei} preview />
+                </div>
+                <div className={styles.item}>
+                  <Image src={Luoxiaohei} preview />
+                </div>
+                <div className={styles.item}>
+                  <Image src={Luoxiaohei} preview />
+                </div>
+                <div className={styles.item}>
+                  <Image src={Luoxiaohei} preview />
+                </div>
               </div>
-              <div className={styles.item}>
-                <Image src={Luoxiaohei} preview />
-              </div>
-              <div className={styles.item}>
-                <Image src={Luoxiaohei} preview />
-              </div>
-              <div className={styles.item}>
-                <Image src={Luoxiaohei} preview />
-              </div>
-              <div className={styles.item}>
-                <Image src={Luoxiaohei} preview />
-              </div>
-              <div className={styles.item}>
-                <Image src={Luoxiaohei} preview />
-              </div>
-            </div>
-          </Card>
+            </Card>
+          </div>
+          <div className={styles.orderReason}>
+            <Card
+              title="左前门槛返修痕"
+              width={312}
+              headerStyle={headerStyle2}
+              bodyStyle={bodyStyle}
+              footerStyle={footerStyle2}
+              footer={renderFooter2()}
+            >
+              <div className={styles.info}>故障原因一</div>
+            </Card>
+          </div>
         </div>
-        <div className={styles.orderReason}>
-          <Card
-            title="左前门槛返修痕"
-            width={312}
-            headerStyle={headerStyle2}
-            bodyStyle={bodyStyle}
-            footerStyle={footerStyle2}
-            footer={renderFooter2()}
-          >
-            <div className={styles.info}>故障原因一</div>
-          </Card>
-        </div>
-      </div>
+      </Page>
     </div>
   );
 };

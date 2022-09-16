@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Title, Table } from 'qirui-digitization-ui';
+import { changeColor } from '@/utils/tools/formatColor';
 
 import styles from './styles.module.less';
 
+interface IData {
+  indexName: string;
+  actualTarget: string;
+  tongBi: string;
+  huanBi: string;
+  targetComplete: string;
+}
+
 const ZLManagerCustomer = () => {
   // state & props
-
-  // redux hooks
-
-  // other hooks
-  const customerData = [
+  const [customer, setCustomer] = useState([
     {
       indexName: '利润总额',
       actualTarget: '1829万',
@@ -53,20 +58,18 @@ const ZLManagerCustomer = () => {
       huanBi: '-4.35%',
       targetComplete: '98.2%',
     },
-  ];
+  ]);
+
+  // redux hooks
+
+  // other hooks
 
   // handles
   return (
     <div className={styles.zlCustomerWrapper}>
-      <Title title="客户" type="tooltip"></Title>
+      <Title title="客户" tooltip="tooltip"></Title>
       <div className={styles.content}>
-        <Table<{
-          indexName: string;
-          actualTarget: string;
-          tongBi: string;
-          huanBi: string;
-          targetComplete: string;
-        }>
+        <Table<IData>
           columns={[
             {
               title: '指标名称',
@@ -79,17 +82,27 @@ const ZLManagerCustomer = () => {
             {
               title: '同比',
               dataKey: 'tongBi',
+              bodyCellRender(column, record, index) {
+                console.log(column, record, index);
+                let color = changeColor(record.tongBi);
+                return <span style={{ color }}>{record.tongBi}</span>;
+              },
             },
             {
               title: '环比',
               dataKey: 'huanBi',
+              bodyCellRender(column, record, index) {
+                console.log(column, record, index);
+                let color = changeColor(record.huanBi);
+                return <span style={{ color }}>{record.huanBi}</span>;
+              },
             },
             {
               title: '目标达成率',
               dataKey: 'targetComplete',
             },
           ]}
-          data={customerData}
+          data={customer}
         />
       </div>
     </div>

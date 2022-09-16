@@ -90,7 +90,7 @@ const ZLChartsCost = () => {
 
   return (
     <div className={styles.zlCostWrapper}>
-      <Title title="COST" type="tooltip"></Title>
+      <Title title="COST" tooltip="tooltip"></Title>
       <div className={styles.content}>
         {state.map((item, index) => {
           return (

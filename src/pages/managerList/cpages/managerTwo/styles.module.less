@@ -1,39 +1,36 @@
 .zlManagerTwoWrapper {
   // 主体区域
-  .header {
-    display: flow-root;
-    .desc {
+  display: flow-root;
+  .desc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .left {
+      width: 62%;
+      line-height: 22px;
+      span:first-child {
+        display: block;
+      }
+    }
+    .right {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      .left {
-        width: 62%;
-        line-height: 22px;
-        span:first-child {
-          display: block;
-        }
+      flex-direction: column;
+      width: 38%;
+      .date {
+        align-self: flex-end;
       }
-      .right {
-        display: flex;
-        flex-direction: column;
-        width: 38%;
-        .date {
-          align-self: flex-end;
-        }
-        // align-self: flex-end;
-      }
+      // align-self: flex-end;
     }
-    .charts {
-      height: 286px;
-      padding: 0 24px;
-      background-color: var(--design-neutral-color-8);
-    }
+  }
+  .charts {
+    height: 286px;
+    background-color: var(--design-neutral-color-8);
   }
   // 关联区域
   .about {
     margin-top: 48px;
-    padding: 0 24px;
     .aboutTitle {
+      padding-bottom: 24px;
       font-size: var(--design-font-size-18);
       color: var(--design-base-color);
     }

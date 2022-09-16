@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Title, Table } from 'qirui-digitization-ui';
-import { formatTableData } from '@/utils/tools/formatData';
+import { changeColor } from '@/utils/tools/formatColor';
 
 import styles from './styles.module.less';
 import { useNavigate } from 'react-router-dom';
@@ -16,70 +16,60 @@ interface IData {
 
 const ZLManagerFinance = () => {
   // state & props
-
-  // redux hooks
-
-  // other hooks
-  const navigate = useNavigate();
-  // handles
-  const financeData = [
+  const [finance, setFinance] = useState([
     {
       indexName: '利润总额',
       actualTarget: '1829万',
-      tongBi: '12.35%',
+      tongBi: '+12.35%',
       huanBi: '-4.35%',
       targetComplete: '98.2%',
     },
     {
       indexName: '边际贡献',
       actualTarget: '1829万',
-      tongBi: '12.35%',
+      tongBi: '+12.35%',
       huanBi: '-4.35%',
       targetComplete: '98.2%',
     },
     {
       indexName: '净资产收益率',
       actualTarget: '1829万',
-      tongBi: '12.35%',
+      tongBi: '+12.35%',
       huanBi: '-4.35%',
       targetComplete: '98.2%',
     },
     {
       indexName: '净收入',
       actualTarget: '1829万',
-      tongBi: '12.35%',
+      tongBi: '+12.35%',
       huanBi: '-4.35%',
       targetComplete: '98.2%',
     },
     {
       indexName: '毛利率',
       actualTarget: '1829万',
-      tongBi: '12.35%',
+      tongBi: '+12.35%',
       huanBi: '-4.35%',
       targetComplete: '98.2%',
     },
     {
       indexName: '存贷资金',
       actualTarget: '1829万',
-      tongBi: '12.35%',
+      tongBi: '+12.35%',
       huanBi: '-4.35%',
       targetComplete: '98.2%',
     },
-  ];
+  ]);
 
-  const handleDataColor = (data: IData[]) => {
-    data.forEach((item, index) => {
-      item.tongBi = formatTableData(item.tongBi);
-      if (item.tongBi.includes('+')) {
-      } else {
-      }
-    });
-    return data;
-  };
+  // redux hooks
+
+  // other hooks
+  const navigate = useNavigate();
+  // handles
 
   return (
     <div className={styles.zlFinanceWrapper}>
-      <Title title="财务" type="tooltip"></Title>
+      <Title title="财务" tooltip="tooltip"></Title>
       <div className={styles.content}>
         <Table<IData>
           columns={[
@@ -94,10 +84,20 @@ const ZLManagerFinance = () => {
             {
               title: '同比',
               dataKey: 'tongBi',
+              bodyCellRender(column, record, index) {
+                console.log(column, record, index);
+                let color = changeColor(record.tongBi);
+                return <span style={{ color }}>{record.tongBi}</span>;
+              },
             },
             {
               title: '环比',
               dataKey: 'huanBi',
+              bodyCellRender(column, record, index) {
+                console.log(column, record, index);
+                let color = changeColor(record.huanBi);
+                return <span style={{ color }}>{record.huanBi}</span>;
+              },
             },
             {
               title: '目标达成率',
@@ -111,7 +111,7 @@ const ZLManagerFinance = () => {
               },
             };
           }}
-          data={handleDataColor(financeData)}
+          data={finance}
         />
       </div>
     </div>

@@ -68,7 +68,7 @@ const ZLChartsQuality = () => {
   };
   return (
     <div className={styles.zlQualityWrapper}>
-      <Title title="QUALITY" type="tooltip"></Title>
+      <Title title="QUALITY" tooltip="tooltip"></Title>
       <div className={styles.content}>
         <Card title="整车ADUIT" headerStyle={headerStyle} bodyStyle={bodyStyle}>
           <div className={styles.info}>

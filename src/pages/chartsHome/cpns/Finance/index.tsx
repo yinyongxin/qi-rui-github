@@ -68,7 +68,7 @@ const ZLChartsFinance = () => {
   };
   return (
     <div className={styles.zlFinanceWrapper}>
-      <Title title="FINANCE" type="tooltip"></Title>
+      <Title title="FINANCE" tooltip="tooltip"></Title>
       <div className={styles.content}>
         <Card
           title="人员流失率"

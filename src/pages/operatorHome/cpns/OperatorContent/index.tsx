@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 import ZLOperatorFinance from '../Finance';
 import ZLOperatorMarket from '../Market';
 import ZLOperatorEfficiency from '../Efficiency';
@@ -15,10 +17,16 @@ const ZLOperatorContent = () => {
         <div className={styles.time}>分类</div>
       </div>
       <div className={styles.list}>
-        <ZLOperatorFinance />
-        <ZLOperatorMarket />
-        <ZLOperatorEfficiency />
-        <ZLOperatorCustomer />
+        <DndProvider backend={HTML5Backend}>
+          <div className={styles.left}>
+            <ZLOperatorFinance />
+            <ZLOperatorEfficiency />
+          </div>
+          <div className={styles.right}>
+            <ZLOperatorMarket />
+            <ZLOperatorCustomer />
+          </div>
+        </DndProvider>
       </div>
     </div>
   );

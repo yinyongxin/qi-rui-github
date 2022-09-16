@@ -13,12 +13,15 @@
       font-size: var(--design-font-size-18);
       color: var(--design-base-color);
     }
-    .time {
-    }
   }
   .list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 12px;
+    grid-template-columns: repeat(2, 50%);
+    .left {
+      margin-right: 6px;
+    }
+    .right {
+      margin-left: 6px;
+    }
   }
 }

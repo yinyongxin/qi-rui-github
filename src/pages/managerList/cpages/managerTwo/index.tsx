@@ -41,25 +41,24 @@ const ZLManagerTwo = () => {
 
   return (
     <div className={styles.zlManagerTwoWrapper}>
-      <div className={styles.header}>
-        <Page
-          pageHeader={{
-            descriptions: renderDescriptions(),
-            title: '净资产收益率',
-            breadcrumb: {
-              list: [
-                {
-                  title: '首页',
-                  path: '/manager',
-                },
-                {
-                  title: '净资产收益率',
-                  path: '/manager/list/two',
-                },
-              ],
-            },
-          }}
-        ></Page>
+      <Page
+        pageHeader={{
+          descriptions: renderDescriptions(),
+          title: '净资产收益率',
+          breadcrumb: {
+            list: [
+              {
+                title: '首页',
+                path: '/manager',
+              },
+              {
+                title: '净资产收益率',
+                path: '/manager/list/two',
+              },
+            ],
+          },
+        }}
+      >
         <div className={styles.charts}>
           <BarLineChart
             width="100%"
@@ -72,94 +71,94 @@ const ZLManagerTwo = () => {
             config={barLineChartConfig}
           />
         </div>
-      </div>
-      <div className={styles.about}>
-        <div className={styles.aboutTitle}>
-          <span>指标关联内容</span>
+        <div className={styles.about}>
+          <div className={styles.aboutTitle}>
+            <span>指标关联内容</span>
+          </div>
+          <div className={styles.aboutCharts}>
+            <div className={styles.chartOne}>
+              <Card
+                title="品牌维度"
+                headerStyle={headerStyle}
+                bodyStyle={bodyStyle}
+              >
+                <div className={styles.in}>
+                  <BarLineChart
+                    width="100%"
+                    height="336px"
+                    data={[
+                      [220, 200, 300, 420],
+                      [410, 280, 410, 420],
+                      [250, 550, 220, 280],
+                    ]}
+                    config={barLineChartConfig}
+                  />
+                </div>
+              </Card>
+            </div>
+            <div className={styles.chartTwo}>
+              <Card
+                title="产品线维度"
+                headerStyle={headerStyle}
+                bodyStyle={bodyStyle}
+              >
+                <div className={styles.in} onClick={toThree}>
+                  <BarLineChart
+                    width="100%"
+                    height="336px"
+                    data={[
+                      [220, 200, 300, 420],
+                      [410, 280, 410, 420],
+                      [250, 550, 220, 280],
+                    ]}
+                    config={barLineChartConfig}
+                  />
+                </div>
+              </Card>
+            </div>
+            <div className={styles.chartThree}>
+              <Card
+                title="国内国际"
+                headerStyle={headerStyle}
+                bodyStyle={bodyStyle}
+              >
+                <div className={styles.in}>
+                  <BarLineChart
+                    width="100%"
+                    height="336px"
+                    data={[
+                      [220, 200, 300, 420],
+                      [410, 280, 410, 420],
+                      [250, 550, 220, 280],
+                    ]}
+                    config={barLineChartConfig}
+                  />
+                </div>
+              </Card>
+            </div>
+            <div className={styles.chartFour}>
+              <Card
+                title="国内国际"
+                headerStyle={headerStyle}
+                bodyStyle={bodyStyle}
+              >
+                <div className={styles.in}>
+                  <BarLineChart
+                    width="100%"
+                    height="336px"
+                    data={[
+                      [220, 200, 300, 420],
+                      [410, 280, 410, 420],
+                      [250, 550, 220, 280],
+                    ]}
+                    config={barLineChartConfig}
+                  />
+                </div>
+              </Card>
+            </div>
+          </div>
         </div>
-        <div className={styles.aboutCharts}>
-          <div className={styles.chartOne}>
-            <Card
-              title="品牌维度"
-              headerStyle={headerStyle}
-              bodyStyle={bodyStyle}
-            >
-              <div className={styles.in}>
-                <BarLineChart
-                  width="100%"
-                  height="336px"
-                  data={[
-                    [220, 200, 300, 420],
-                    [410, 280, 410, 420],
-                    [250, 550, 220, 280],
-                  ]}
-                  config={barLineChartConfig}
-                />
-              </div>
-            </Card>
-          </div>
-          <div className={styles.chartTwo}>
-            <Card
-              title="产品线维度"
-              headerStyle={headerStyle}
-              bodyStyle={bodyStyle}
-            >
-              <div className={styles.in} onClick={toThree}>
-                <BarLineChart
-                  width="100%"
-                  height="336px"
-                  data={[
-                    [220, 200, 300, 420],
-                    [410, 280, 410, 420],
-                    [250, 550, 220, 280],
-                  ]}
-                  config={barLineChartConfig}
-                />
-              </div>
-            </Card>
-          </div>
-          <div className={styles.chartThree}>
-            <Card
-              title="国内国际"
-              headerStyle={headerStyle}
-              bodyStyle={bodyStyle}
-            >
-              <div className={styles.in}>
-                <BarLineChart
-                  width="100%"
-                  height="336px"
-                  data={[
-                    [220, 200, 300, 420],
-                    [410, 280, 410, 420],
-                    [250, 550, 220, 280],
-                  ]}
-                  config={barLineChartConfig}
-                />
-              </div>
-            </Card>
-          </div>
-          <div className={styles.chartFour}>
-            <Card
-              title="国内国际"
-              headerStyle={headerStyle}
-              bodyStyle={bodyStyle}
-            >
-              <div className={styles.in}>
-                <BarLineChart
-                  width="100%"
-                  height="336px"
-                  data={[
-                    [220, 200, 300, 420],
-                    [410, 280, 410, 420],
-                    [250, 550, 220, 280],
-                  ]}
-                  config={barLineChartConfig}
-                />
-              </div>
-            </Card>
-          </div>
-        </div>
-      </div>
+      </Page>
     </div>
   );
 };

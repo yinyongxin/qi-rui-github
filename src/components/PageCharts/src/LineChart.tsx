@@ -133,9 +133,9 @@ const LineChart = React.forwardRef<IRefInterface, LineChartPropsInterface>(
     };
 
     return (
-      <div>
+      <>
         <BaseChart option={option} width={width} height={height} />
-      </div>
+      </>
     );
   }
 );

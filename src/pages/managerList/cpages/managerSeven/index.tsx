@@ -25,77 +25,76 @@ const ZLManagerSeven = () => {
 
   return (
     <div className={styles.zlManagerSevenWrapper}>
-      <div className={styles.header}>
-        <Page
-          pageHeader={{
-            descriptions: renderTemplate(),
-            breadcrumb: {
-              list: [
-                {
-                  title: '首页',
-                  path: '/manager',
-                },
-                {
-                  title: '净资产收益率',
-                  path: '/manager/list/two',
-                },
-                {
-                  title: '产品线指标概况',
-                  path: '/manager/list/three',
-                },
-                {
-                  title: '总资产净利率',
-                  path: '/manager/list/four',
-                },
-                {
-                  title: '主营业务净利润',
-                  path: '/manager/list/five',
-                },
-                {
-                  title: '成本总额',
-                  path: '/manager/list/six',
-                },
-                {
-                  title: '报表',
-                  path: '/manager/list/seven',
-                },
-              ],
-            },
-          }}
-        ></Page>
-      </div>
-      <div className={styles.charts}>
-        <div className={styles.left}>
-          <Card title="营业费用报表" headerStyle={headerStyle}>
-            <div className={styles.in}>
-              <div className={styles.desc}>
-                <span>分析营业费用构成发现当月营业外支出大幅增加</span>
+      <Page
+        pageHeader={{
+          descriptions: renderTemplate(),
+          breadcrumb: {
+            list: [
+              {
+                title: '首页',
+                path: '/manager',
+              },
+              {
+                title: '净资产收益率',
+                path: '/manager/list/two',
+              },
+              {
+                title: '产品线指标概况',
+                path: '/manager/list/three',
+              },
+              {
+                title: '总资产净利率',
+                path: '/manager/list/four',
+              },
+              {
+                title: '主营业务净利润',
+                path: '/manager/list/five',
+              },
+              {
+                title: '成本总额',
+                path: '/manager/list/six',
+              },
+              {
+                title: '报表',
+                path: '/manager/list/seven',
+              },
+            ],
+          },
+        }}
+      >
+        <div className={styles.charts}>
+          <div className={styles.left}>
+            <Card title="营业费用报表" headerStyle={headerStyle}>
+              <div className={styles.in}>
+                <div className={styles.desc}>
+                  <span>分析营业费用构成发现当月营业外支出大幅增加</span>
+                </div>
+                <div className={styles.file}>文件预览</div>
               </div>
-              <div className={styles.file}>文件预览</div>
-            </div>
-          </Card>
-        </div>
-        <div className={styles.center}>
-          <Card title="总账科目分析" headerStyle={headerStyle}>
-            <div className={styles.in}>
-              <div className={styles.desc}>
-                <span>分析营业费用构成发现当月营业外支出大幅增加</span>
+            </Card>
+          </div>
+          <div className={styles.center}>
+            <Card title="总账科目分析" headerStyle={headerStyle}>
+              <div className={styles.in}>
+                <div className={styles.desc}>
+                  <span>分析营业费用构成发现当月营业外支出大幅增加</span>
+                </div>
+                <div className={styles.file}>文件预览</div>
               </div>
-              <div className={styles.file}>文件预览</div>
-            </div>
-          </Card>
-        </div>
-        <div className={styles.right}>
-          <Card title="财务凭证细表分析" headerStyle={headerStyle}>
-            <div className={styles.in}>
-              <div className={styles.desc}>
-                <span>分析营业费用构成发现当月营业外支出大幅增加</span>
+            </Card>
+          </div>
+          <div className={styles.right}>
+            <Card title="财务凭证细表分析" headerStyle={headerStyle}>
+              <div className={styles.in}>
+                <div className={styles.desc}>
+                  <span>分析营业费用构成发现当月营业外支出大幅增加</span>
+                </div>
+                <div className={styles.file}>文件预览</div>
               </div>
-              <div className={styles.file}>文件预览</div>
-            </div>
-          </Card>
+            </Card>
+          </div>
         </div>
-      </div>
+      </Page>
     </div>
   );
 };

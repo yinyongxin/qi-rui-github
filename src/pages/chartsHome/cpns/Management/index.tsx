@@ -68,7 +68,7 @@ const ZLChartsManagement = () => {
   };
   return (
     <div className={styles.zlManagementWrapper}>
-      <Title title="MANAGEMENT" type="tooltip"></Title>
+      <Title title="MANAGEMENT" tooltip="tooltip"></Title>
       <div className={styles.content}>
         <Card
           title="生产材料周转天数"

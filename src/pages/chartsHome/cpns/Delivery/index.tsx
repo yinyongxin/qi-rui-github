@@ -67,7 +67,7 @@ const ZLChartsDelivery = () => {
 
   return (
     <div className={styles.zlDeliveryWrapper}>
-      <Title title="DELIVERY" type="tooltip"></Title>
+      <Title title="DELIVERY" tooltip="tooltip"></Title>
       <div className={styles.content}>
         {state.map((item, index) => {
           return (

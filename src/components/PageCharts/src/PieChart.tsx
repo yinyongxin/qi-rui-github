@@ -130,9 +130,9 @@ const PieChart = React.forwardRef<IRefInterface, PieChartPropsInterface>(
     };
 
     return (
-      <div>
+      <>
         <BaseChart option={option} width={width} height={height} />
-      </div>
+      </>
     );
   }
 );

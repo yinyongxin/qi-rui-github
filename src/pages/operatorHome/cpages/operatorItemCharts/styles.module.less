@@ -1,49 +1,58 @@
 .zlOperatorItemWrapper {
   // 头部区域
-  .head {
-    .types {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      .title {
-        font-style: normal;
-        margin: 0;
-        padding: 0;
-        font-weight: 500;
-        font-size: var(--design-font-size-18);
-        color: var(--design-base-color);
-      }
+  .types {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .title {
+      font-style: normal;
+      margin: 0;
+      padding: 0;
+      font-weight: 500;
+      font-size: var(--design-font-size-18);
+      color: var(--design-base-color);
     }
   }
   // 主体区域
   .info {
-    box-sizing: border-box;
     padding: 0 24px;
-    margin-top: 32px;
+    margin-top: 8px;
     .chartsOne {
       display: flex;
+      box-sizing: border-box;
       flex-wrap: wrap;
       height: 375px;
       & > div {
         width: 50%;
       }
+      .in {
+        height: 327px;
+      }
     }
     .chartsTwo {
       display: flex;
       flex-wrap: wrap;
+      box-sizing: border-box;
       margin-top: 24px;
       height: 370px;
       & > div {
         width: 33.33%;
       }
+      .in {
+        height: 327px;
+      }
     }
     .chartsThree {
       display: flex;
       flex-wrap: wrap;
+      box-sizing: border-box;
       margin-top: 24px;
       height: 318px;
       & > div {
         width: 25%;
+      }
+      .in {
+        height: 327px;
       }
     }
   }

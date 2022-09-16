@@ -1,54 +1,61 @@
 import React, { Fragment, useState } from 'react';
 
-import { Card, Title } from 'qirui-digitization-ui';
-import ZLCardHeader from '../CardHeader';
+import { Title } from 'qirui-digitization-ui';
+import ZLCard from '../Card';
+import { ManagerFinanceCard } from '@/config/constants';
 
 import styles from './styles.module.less';
 
 const ZLManagerFinance = () => {
   // state & props
-  const [state, setState] = useState([
+  const [finance, setFinance] = useState([
     {
       id: 1,
-      title: 'hpv值超5%阈值',
-      originator: '张长弓',
-      status: 2,
-      dateTime: '2021-02-03 18:56:23',
+      title: '利润总额',
+      targetValue: 3624,
+      tongBi: '+8.12%',
+      huanBi: '-1.25%',
+      targetRate: '99%',
     },
     {
       id: 2,
-      title: 'hpv值超5%阈值',
-      originator: '张长弓',
-      status: 2,
-      dateTime: '2021-02-03 18:56:23',
+      title: '边际贡献',
+      targetValue: 3624,
+      tongBi: '+8.12%',
+      huanBi: '-1.25%',
+      targetRate: '99%',
     },
     {
       id: 3,
-      title: 'hpv值超5%阈值',
-      originator: '张长弓',
-      status: 2,
-      dateTime: '2021-02-03 18:56:23',
+      title: '净资产收益率',
+      targetValue: 3624,
+      tongBi: '+8.12%',
+      huanBi: '-1.25%',
+      targetRate: '99%',
     },
     {
       id: 4,
-      title: 'hpv值超5%阈值',
-      originator: '张长弓',
-      status: 2,
-      dateTime: '2021-02-03 18:56:23',
+      title: '净收入',
+      targetValue: 3624,
+      tongBi: '+8.12%',
+      huanBi: '-1.25%',
+      targetRate: '99%',
     },
     {
       id: 5,
-      title: 'hpv值超5%阈值',
-      originator: '张长弓',
-      status: 2,
-      dateTime: '2021-02-03 18:56:23',
+      title: '毛利率',
+      targetValue: 3624,
+      tongBi: '+8.12%',
+      huanBi: '-1.25%',
+      targetRate: '99%',
     },
     {
       id: 6,
-      title: 'hpv值超5%阈值',
-      originator: '张长弓',
-      status: 2,
-      dateTime: '2021-02-03 18:56:23',
+      title: '存贷资金',
+      targetValue: 3624,
+      tongBi: '+8.12%',
+      huanBi: '-1.25%',
+      targetRate: '99%',
     },
   ]);
 
@@ -57,42 +64,28 @@ const ZLManagerFinance = () => {
   // other hooks
 
   // handles
-  const headerStyle = {
-    color: 'var(--design-neutral-color-1)',
-    paddingTop: '12px',
-    paddingBottom: '16px',
+  const moveCard = (dragIndex: number, hoverIndex: number) => {
+    const dragCard = finance[dragIndex];
+    let cloneCards = [...finance];
+    cloneCards.splice(dragIndex, 1);
+    cloneCards.splice(hoverIndex, 0, dragCard);
+    setFinance(cloneCards);
   };
-  const bodyStyle = {
-    color: 'var(--design-neutral-color-2)',
-    padding: '16px',
-  };
+
   return (
     <div className={styles.zlFinanceWrapper}>
-      <Title title="财务" type="tooltip"></Title>
+      <Title title="财务" tooltip="tooltip"></Title>
       <div className={styles.content}>
-        {state.map((item, index) => {
+        {finance.map((item, index) => {
           return (
             <Fragment key={item.id}>
-              <Card
-                title={<ZLCardHeader title="利润总额" price={3624} />}
-                headerStyle={headerStyle}
-                bodyStyle={bodyStyle}
-              >
-                <ul className={styles.info}>
-                  <li className={styles.year}>
-                    <span>同比</span>
-                    <span className={styles.colorGreen}>+8.22%</span>
-                  </li>
-                  <li className={styles.ring}>
-                    <span>环比</span>
-                    <span className={styles.colorRed}>-1.25%</span>
-                  </li>
-                  <li className={styles.target}>
-                    <span>目标达成率</span>
-                    <span>99%</span>
-                  </li>
-                </ul>
-              </Card>
+              <ZLCard
+                id={item.id}
+                index={index}
+                moveCard={moveCard}
+                info={item}
+                type={ManagerFinanceCard}
+              />
             </Fragment>
           );
         })}

@@ -37,59 +37,62 @@ const ZLManagerSix = () => {
 
   return (
     <div className={styles.zlManagerSixWrapper}>
-      <div className={styles.header}>
-        <Page
-          pageHeader={{
-            descriptions: renderTemplate(),
-            breadcrumb: {
-              list: [
-                {
-                  title: '首页',
-                  path: '/manager',
-                },
-                {
-                  title: '净资产收益率',
-                  path: '/manager/list/two',
-                },
-                {
-                  title: '产品线指标概况',
-                  path: '/manager/list/three',
-                },
-                {
-                  title: '总资产净利率',
-                  path: '/manager/list/four',
-                },
-                {
-                  title: '主营业务净利润',
-                  path: '/manager/list/five',
-                },
-                {
-                  title: '成本总额',
-                  path: '/manager/list/six',
-                },
-              ],
-            },
-          }}
-        ></Page>
-      </div>
-      <div className={styles.charts}>
-        <Card title="成本总额" headerStyle={headerStyle} bodyStyle={bodyStyle}>
-          <div className={styles.in} onClick={toSeven}>
-            <BarChart
-              width="100%"
-              height="327px"
-              data={[
-                [52, 70],
-                [90, 80],
-                [60, 70],
-                [40, 30],
-                [25, 15],
-              ]}
-              config={barChartConfig}
-            />
-          </div>
-        </Card>
-      </div>
+      <Page
+        pageHeader={{
+          descriptions: renderTemplate(),
+          breadcrumb: {
+            list: [
+              {
+                title: '首页',
+                path: '/manager',
+              },
+              {
+                title: '净资产收益率',
+                path: '/manager/list/two',
+              },
+              {
+                title: '产品线指标概况',
+                path: '/manager/list/three',
+              },
+              {
+                title: '总资产净利率',
+                path: '/manager/list/four',
+              },
+              {
+                title: '主营业务净利润',
+                path: '/manager/list/five',
+              },
+              {
+                title: '成本总额',
+                path: '/manager/list/six',
+              },
+            ],
+          },
+        }}
+      >
+        <div className={styles.charts}>
+          <Card
+            title="成本总额"
+            headerStyle={headerStyle}
+            bodyStyle={bodyStyle}
+          >
+            <div className={styles.in} onClick={toSeven}>
+              <BarChart
+                width="100%"
+                height="327px"
+                data={[
+                  [52, 70],
+                  [90, 80],
+                  [60, 70],
+                  [40, 30],
+                  [25, 15],
+                ]}
+                config={barChartConfig}
+              />
+            </div>
+          </Card>
+        </div>
+      </Page>
     </div>
   );
 };
