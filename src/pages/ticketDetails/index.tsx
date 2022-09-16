@@ -1,7 +1,6 @@
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './styles.module.less';
-import { Card, Page, Title } from 'qirui-digitization-ui';
 import TitleNav from './cpns/Title';
 import CardWork from './cpns/CardWork';
 import WorkStatus from './cpns/WorkStatus';
@@ -14,15 +13,9 @@ import ReactFlow, {
   useNodesState,
   useEdgesState,
   addEdge,
-  MiniMap,
-  Controls,
   Position
 } from "react-flow-renderer";
-import ColorSelectorNode from './cpns/ColorSelectorNode';
 const connectionLineStyle = { stroke: "#fff" };
-const snapGrid = [20, 20];
-
-
 export const orderContext = React.createContext({
   role: 1,
   changeStatus: (e: string) => { },
@@ -33,7 +26,6 @@ const nodeTypes = {
   selectorNode: CardWork,
   cardOrderNode: CardOrder,
   workStatusNode: WorkStatus,
-
 };
 const TicketDetails = () => {
 
@@ -189,33 +181,21 @@ const TicketDetails = () => {
       setNodes(nodeArr);
       setEdges(edgesArr);
     }
-
-
   }
   useEffect(() => {
     getLeftList()
   }, [getOrderStatusFun])
-
-
-
-
-
   return (
     <div className={styles.TicketDetails}>
       <TitleNav></TitleNav>
       <div className={styles.orderDetail}>
-        {/* <div className={styles.orderLeft}>
-          {orderDetail.map((item, index) => {
-            return <CardOrder orderInfo={item} key={index}></CardOrder>
-          })}
-        </div> */}
         <orderContext.Provider value={{
           changeStatus,
           role,
           orderStatus,
           overrule
         }}>
-          {/* <CardWork handleOrder={handleOrder} /> */}
+
           <div style={{ width: '100%', height: '700px', }} className={styles.reactFlow}>
             <ReactFlow
               defaultNodes={nodes}
@@ -231,11 +211,8 @@ const TicketDetails = () => {
               zoomOnPinch={false}
               zoomOnDoubleClick={false}
               fitView={false}
-
             ></ReactFlow>
           </div>
-          {/* {getOrderStatusFun !== 1 && } */}
-          {/* < WorkStatus orderStatusChange={orderStatusChange} /> */}
           <div className={styles.drawer}>
             <DrawerRight ref={openRef} onchangeOpen={onchangeOpen} onOverrule={onOverrule}></DrawerRight>
           </div>

@@ -1,24 +1,35 @@
 .zlManagerContentWrapper {
   box-sizing: border-box;
-  width: 81.77%;
+  width: 100%;
   padding: 0 24px;
+
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
+
     .title {
       font-weight: normal;
       margin: 0;
       font-size: var(--design-font-size-18);
       color: var(--design-base-color);
     }
-    .time {
-    }
+
+    .time {}
   }
+
   .list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 12px;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+    // column-gap: 12px;
+  }
+
+  .listMobile {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
   }
 }

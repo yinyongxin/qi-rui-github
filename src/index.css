@@ -1,14 +1,14 @@
 :root {
-  color: var(--design-neutral-color9);
-  background-color: var(--design-neutral-color);
+  color: var(--design-text-color-5);
+  background-color: var(--design-bg-color-5);
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: var(--design-neutral-color);
     background-color: var(--design-neutral-color-9);
   }
-}
+} */
 .design-drawer {
   top: 80px !important;
 }

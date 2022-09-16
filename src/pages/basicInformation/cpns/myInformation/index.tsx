@@ -39,7 +39,7 @@ const Info = () => {
   };
   return (
     <div className={styles.basicInformation}>
-      <div className={styles.breadcrumbs}>账号中心 / 基本资料</div>
+      <div className={styles.breadcrumbs}>{locale('information.account.center')} / {locale('information.basic.information')}</div>
       <div className={styles.info}>
         <div className={styles.avatar}>
           <ImageComponent src={image}></ImageComponent>

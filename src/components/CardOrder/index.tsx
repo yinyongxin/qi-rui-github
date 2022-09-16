@@ -28,7 +28,6 @@ const CardOrder: FC<CardOrderPropType> = ({ data }) => {
         type="target"
         position={Position.Right}
         style={{ top: 30, background: "#18FEFE", width: '12px', height: '12px', borderRadius: '0px', right: '-12px' }}
-      // isConnectable={isConnectable}
       />
     </div>
   )
