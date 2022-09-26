@@ -2,6 +2,7 @@ import React from 'react';
 
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import { TouchBackend } from 'react-dnd-touch-backend';
 import ZLManagerFinance from '../Finance';
 import ZLManagerMarket from '../Market';
 import ZLManagerEfficiency from '../Efficiency';
@@ -22,7 +23,7 @@ const ZLManagerContent = () => {
         </div>
       )}
       <div className={isMobile ? styles.listMobile : styles.list}>
-        <DndProvider backend={HTML5Backend}>
+        <DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
           <div className={styles.left}>
             <ZLManagerFinance />
             <ZLManagerEfficiency />

@@ -22,6 +22,7 @@
     "react-cropper": "^2.1.8",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
+    "react-dnd-touch-backend": "^16.0.1",
     "react-dom": "^18.2.0",
     "react-flow-renderer": "^10.3.16",
     "react-redux": "^8.0.2",
